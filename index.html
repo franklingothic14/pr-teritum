@@ -15,14 +15,11 @@
       --text:      #3a4a55;
       --muted:     #8a9baa;
       --faint:     #B5BFC6;
-
       --shadow-light: #FAFBFF;
       --shadow-dark:  rgba(22,27,29,0.23);
-
       --accent-inf:  #5b8af0;
       --accent-prae: #9b6fe0;
       --accent-perf: #4db8a0;
-
       --green: #4db8a0;
       --red:   #e07070;
     }
@@ -43,7 +40,6 @@
       padding: 40px 24px 80px;
     }
 
-    /* ── HEADER ── */
     header {
       text-align: center;
       margin-bottom: 40px;
@@ -60,9 +56,7 @@
       padding: 5px 14px;
       border-radius: 20px;
       margin-bottom: 16px;
-      box-shadow:
-        3px 3px 6px var(--shadow-dark),
-        -3px -3px 6px var(--shadow-light);
+      box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
     }
 
     h1 {
@@ -75,13 +69,8 @@
       letter-spacing: -1px;
     }
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 15px;
-      font-weight: 500;
-    }
+    .subtitle { color: var(--muted); font-size: 15px; font-weight: 500; }
 
-    /* ── CONTROLS ── */
     .controls {
       display: flex;
       flex-wrap: wrap;
@@ -92,20 +81,12 @@
       border-radius: 20px;
       padding: 18px 22px;
       margin-bottom: 24px;
-      box-shadow:
-        6px 6px 14px var(--shadow-dark),
-        -6px -6px 14px var(--shadow-light);
+      box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
     }
 
-    .controls-left {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+    .controls-left { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 
     label { display: none; }
-
     select { display: none; }
 
     .btn {
@@ -119,41 +100,16 @@
       transition: all 0.15s;
       background: var(--bg);
       color: var(--text);
-      box-shadow:
-        4px 4px 10px var(--shadow-dark),
-        -4px -4px 10px var(--shadow-light);
+      box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
       letter-spacing: 0.3px;
     }
 
-    .btn:hover {
-      box-shadow:
-        6px 6px 14px var(--shadow-dark),
-        -6px -6px 14px var(--shadow-light);
-    }
-
-    .btn:active {
-      box-shadow:
-        inset 3px 3px 7px var(--shadow-dark),
-        inset -3px -3px 7px var(--shadow-light);
-      transform: scale(0.98);
-    }
-
-    .btn-primary {
-      background: var(--dark);
-      color: #fff;
-      box-shadow:
-        4px 4px 10px var(--shadow-dark),
-        -4px -4px 10px var(--shadow-light);
-    }
-
+    .btn:hover { box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light); }
+    .btn:active { box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -3px -3px 7px var(--shadow-light); transform: scale(0.98); }
+    .btn-primary { background: var(--dark); color: #fff; box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light); }
     .btn-primary:hover { background: #5a6f7c; }
 
-    /* ── STATS ── */
-    .stats {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .stats { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .stat {
       background: var(--bg);
@@ -161,39 +117,13 @@
       padding: 8px 16px;
       text-align: center;
       min-width: 80px;
-      box-shadow:
-        inset 3px 3px 7px var(--shadow-dark),
-        inset -3px -3px 7px var(--shadow-light);
+      box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -3px -3px 7px var(--shadow-light);
     }
 
-    .stat-label {
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 2px;
-      font-weight: 600;
-    }
+    .stat-label { font-size: 10px; color: var(--muted); letter-spacing: 1.2px; text-transform: uppercase; display: block; margin-bottom: 2px; font-weight: 600; }
+    .stat-value { font-size: 18px; font-weight: 700; color: var(--dark); font-variant-numeric: tabular-nums; font-family: 'Cabinet Grotesk', sans-serif; }
 
-    .stat-value {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--dark);
-      font-variant-numeric: tabular-nums;
-      font-family: 'Cabinet Grotesk', sans-serif;
-    }
-
-    /* ── GRUPPE FILTER ── */
-    .gruppe-bar {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 4px;
-      margin-bottom: 24px;
-      align-items: center;
-    }
-
+    .gruppe-bar { display: flex; flex-direction: row; flex-wrap: wrap; gap: 4px; margin-bottom: 24px; align-items: center; }
     .gruppe-label { display: none; }
 
     .pill {
@@ -240,52 +170,18 @@
     .pill.active .pill-name { opacity: 1; max-width: 200px; }
     .pill:hover .pill-name { opacity: 0.5; max-width: 200px; }
 
-    /* ── INFO LINE ── */
-    .info-line {
-      text-align: center;
-      font-size: 14px;
-      color: var(--muted);
-      min-height: 22px;
-      margin-bottom: 10px;
-      transition: color 0.3s;
-      font-weight: 500;
-    }
-
+    .info-line { text-align: center; font-size: 14px; color: var(--muted); min-height: 22px; margin-bottom: 10px; transition: color 0.3s; font-weight: 500; }
     .info-line.success { color: var(--green); font-weight: 600; }
 
-    /* ── LEGEND ── */
-    .legend {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 22px;
-      flex-wrap: wrap;
-    }
-
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
+    .legend { display: flex; gap: 20px; justify-content: center; margin-bottom: 22px; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--muted); font-weight: 500; }
     .legend-dot { width: 10px; height: 10px; border-radius: 3px; }
     .dot-inf  { background: var(--accent-inf); }
     .dot-prae { background: var(--accent-prae); }
     .dot-perf { background: var(--accent-perf); }
 
-    /* ── GAME GRID ── */
-    .game-area {
-      display: grid;
-      gap: 12px;
-      justify-content: center;
-      justify-items: center;
-      margin: 0 auto;
-    }
+    .game-area { display: grid; gap: 12px; justify-content: center; justify-items: center; margin: 0 auto; }
 
-    /* ── CARD ── */
     .card {
       width: 100%;
       max-width: 160px;
@@ -307,19 +203,14 @@
       position: relative;
       background: var(--bg);
       color: var(--text);
-      box-shadow:
-        5px 5px 12px var(--shadow-dark),
-        -5px -5px 12px var(--shadow-light);
+      box-shadow: 5px 5px 12px var(--shadow-dark), -5px -5px 12px var(--shadow-light);
     }
 
-    .card:hover:not(:disabled) {
-      box-shadow:
-        8px 8px 18px var(--shadow-dark),
-        -8px -8px 18px var(--shadow-light);
+    .card:hover:not(:disabled):not(.selected):not(.matched):not(.wrong) {
+      box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light);
       transform: translateY(-2px);
     }
 
-    /* colour accent strip at top */
     .card::after {
       content: '';
       position: absolute;
@@ -332,18 +223,13 @@
 
     .card-inf  { color: var(--accent-inf);  }
     .card-inf::after  { background: var(--accent-inf); }
-
     .card-prae { color: var(--accent-prae); }
     .card-prae::after { background: var(--accent-prae); }
-
     .card-perf { color: var(--accent-perf); }
     .card-perf::after { background: var(--accent-perf); }
 
-    /* States */
     .card.selected {
-      box-shadow:
-        inset 4px 4px 10px var(--shadow-dark),
-        inset -4px -4px 10px var(--shadow-light);
+      box-shadow: inset 4px 4px 10px var(--shadow-dark), inset -4px -4px 10px var(--shadow-light);
       transform: scale(0.97);
     }
 
@@ -352,123 +238,55 @@
       color: var(--green) !important;
       cursor: default;
       transform: none;
-      box-shadow:
-        inset 3px 3px 8px var(--shadow-dark),
-        inset -3px -3px 8px var(--shadow-light);
+      box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light);
     }
 
     .card.matched::after { background: var(--green) !important; }
 
     .card.wrong {
       color: var(--red) !important;
-      box-shadow:
-        inset 3px 3px 8px var(--shadow-dark),
-        inset -3px -3px 8px var(--shadow-light);
+      box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light);
     }
 
     .card:disabled { cursor: default; }
 
-    /* ── EMPTY SLOT ── */
     .empty-slot {
       max-width: 160px;
       min-height: 82px;
       border-radius: 18px;
       background: var(--bg);
-      box-shadow:
-        inset 3px 3px 8px var(--shadow-dark),
-        inset -3px -3px 8px var(--shadow-light);
+      box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light);
     }
 
-    /* ── PROGRESS ── */
     .progress-wrap {
       margin-bottom: 22px;
       background: var(--bg);
       border-radius: 16px;
       padding: 16px 20px;
-      box-shadow:
-        5px 5px 12px var(--shadow-dark),
-        -5px -5px 12px var(--shadow-light);
+      box-shadow: 5px 5px 12px var(--shadow-dark), -5px -5px 12px var(--shadow-light);
     }
 
-    .progress-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
+    .progress-meta { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 12px; font-weight: 500; }
     .progress-meta span { font-weight: 700; color: var(--dark); }
+    .progress-track { height: 6px; background: var(--surface); border-radius: 3px; overflow: hidden; box-shadow: inset 2px 2px 4px var(--shadow-dark); }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-inf), var(--accent-perf)); border-radius: 3px; transition: width 0.4s ease; }
 
-    .progress-track {
-      height: 6px;
-      background: var(--surface);
-      border-radius: 3px;
-      overflow: hidden;
-      box-shadow: inset 2px 2px 4px var(--shadow-dark);
-    }
+    .stages { display: flex; gap: 8px; justify-content: center; margin-bottom: 20px; }
+    .stage-dot { width: 28px; height: 6px; border-radius: 3px; background: var(--surface); box-shadow: inset 2px 2px 4px var(--shadow-dark); transition: background 0.3s, box-shadow 0.3s; }
+    .stage-dot.done { background: var(--green); box-shadow: 2px 2px 5px rgba(77,184,160,0.3); }
+    .stage-dot.active { background: var(--accent-inf); box-shadow: 2px 2px 5px rgba(91,138,240,0.3); }
+    .stages-label { font-size: 11px; color: var(--muted); text-align: center; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
 
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent-inf), var(--accent-perf));
-      border-radius: 3px;
-      transition: width 0.4s ease;
-    }
-
-    /* ── STAGES ── */
-    .stages {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .stage-dot {
-      width: 28px; height: 6px;
-      border-radius: 3px;
-      background: var(--surface);
-      box-shadow: inset 2px 2px 4px var(--shadow-dark);
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-
-    .stage-dot.done {
-      background: var(--green);
-      box-shadow: 2px 2px 5px rgba(77,184,160,0.3);
-    }
-
-    .stage-dot.active {
-      background: var(--accent-inf);
-      box-shadow: 2px 2px 5px rgba(91,138,240,0.3);
-    }
-
-    .stages-label {
-      font-size: 11px;
-      color: var(--muted);
-      text-align: center;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    /* ── MODAL ── */
     .modal-overlay {
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background: rgba(180,190,200,0.5);
       z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
       transition: opacity 0.3s;
       backdrop-filter: blur(8px);
     }
-
     .modal-overlay.visible { opacity: 1; pointer-events: all; }
-
     .modal {
       background: var(--bg);
       border-radius: 28px;
@@ -478,47 +296,15 @@
       text-align: center;
       transform: scale(0.9);
       transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      box-shadow:
-        12px 12px 28px var(--shadow-dark),
-        -12px -12px 28px var(--shadow-light);
+      box-shadow: 12px 12px 28px var(--shadow-dark), -12px -12px 28px var(--shadow-light);
     }
-
     .modal-overlay.visible .modal { transform: scale(1); }
-
     .modal-icon { font-size: 52px; margin-bottom: 16px; }
+    .modal h2 { font-family: 'Cabinet Grotesk', sans-serif; font-size: 26px; font-weight: 800; color: var(--dark); margin-bottom: 10px; }
+    .modal p { color: var(--muted); font-size: 15px; line-height: 1.6; margin-bottom: 28px; font-weight: 500; }
+    .modal .btn { width: 100%; padding: 14px; font-size: 15px; border-radius: 14px; }
 
-    .modal h2 {
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 10px;
-    }
-
-    .modal p {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 28px;
-      font-weight: 500;
-    }
-
-    .modal .btn {
-      width: 100%;
-      padding: 14px;
-      font-size: 15px;
-      border-radius: 14px;
-    }
-
-    /* ── FOOTER ── */
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 12px;
-      color: var(--faint);
-      font-weight: 500;
-      letter-spacing: 0.3px;
-    }
+    .footer { text-align: center; margin-top: 40px; font-size: 12px; color: var(--faint); font-weight: 500; letter-spacing: 0.3px; }
 
     @media (max-width: 600px) {
       .controls { flex-direction: column; align-items: flex-start; }
@@ -528,7 +314,6 @@
   </style>
 </head>
 <body>
-
 <div class="wrap">
   <header>
     <div class="logo-tag">Deutsch lernen</div>
@@ -544,33 +329,20 @@
       <button class="btn" id="reshuffleBtn">Mischen</button>
     </div>
     <div class="stats">
-      <div class="stat">
-        <span class="stat-label">Züge</span>
-        <span class="stat-value" id="statMoves">0</span>
-      </div>
-      <div class="stat">
-        <span class="stat-label">Gruppen</span>
-        <span class="stat-value"><span id="statMatches">0</span>/<span id="statTarget">3</span></span>
-      </div>
-      <div class="stat">
-        <span class="stat-label">Verben</span>
-        <span class="stat-value" id="statTotal">0</span>
-      </div>
+      <div class="stat"><span class="stat-label">Züge</span><span class="stat-value" id="statMoves">0</span></div>
+      <div class="stat"><span class="stat-label">Gruppen</span><span class="stat-value"><span id="statMatches">0</span>/<span id="statTarget">3</span></span></div>
+      <div class="stat"><span class="stat-label">Verben</span><span class="stat-value" id="statTotal">0</span></div>
     </div>
   </div>
 
-  <!-- Gruppe filter -->
   <div class="gruppe-bar" id="gruppeBar"></div>
 
-  <!-- Stage progress -->
   <div class="progress-wrap">
     <div class="progress-meta">
       <div>Stufe <span id="stageNum">1</span> / 6 &nbsp;·&nbsp; Feld <span id="gridSize">2×3</span></div>
       <div>Paare: <span id="pairsNeeded">3</span></div>
     </div>
-    <div class="progress-track">
-      <div class="progress-fill" id="progressFill" style="width:0%"></div>
-    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
   </div>
 
   <div class="stages-label">Fortschritt der Stufen</div>
@@ -584,11 +356,9 @@
 
   <div class="info-line" id="infoLine">Wähle eine Karte…</div>
   <div class="game-area" id="gameBoard"></div>
-
   <div class="footer">Verbinde alle drei Formen eines Verbs: Infinitiv + Präteritum + Perfekt</div>
 </div>
 
-<!-- Modal -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
     <div class="modal-icon" id="modalIcon">🎉</div>
@@ -613,7 +383,7 @@ const verben = [
   { infinitiv: "ziehen",     praeteritum: "zog",        perfekt: "hat gezogen",       gruppe: "ie → o"  },
   { infinitiv: "verlieren",  praeteritum: "verlor",     perfekt: "hat verloren",      gruppe: "ie → o"  },
   { infinitiv: "frieren",    praeteritum: "fror",       perfekt: "ist gefroren",      gruppe: "ie → o"  },
-  { infinitiv: "essen",      praeteritum: "aß",         perfekt: "hat gegessen",      gruppe: "e → a"   },
+  { infinitiv: "essen",      praeteritum: "aß",      perfekt: "hat gegessen",      gruppe: "e → a"   },
   { infinitiv: "geben",      praeteritum: "gab",        perfekt: "hat gegeben",       gruppe: "e → a"   },
   { infinitiv: "lesen",      praeteritum: "las",        perfekt: "hat gelesen",       gruppe: "e → a"   },
   { infinitiv: "sehen",      praeteritum: "sah",        perfekt: "hat gesehen",       gruppe: "e → a"   },
@@ -624,7 +394,7 @@ const verben = [
   { infinitiv: "tragen",     praeteritum: "trug",       perfekt: "hat getragen",      gruppe: "a → u"   },
   { infinitiv: "schlagen",   praeteritum: "schlug",     perfekt: "hat geschlagen",    gruppe: "a → u"   },
   { infinitiv: "einladen",   praeteritum: "lud ein",    perfekt: "hat eingeladen",    gruppe: "a → u"   },
-  { infinitiv: "lassen",     praeteritum: "ließ",       perfekt: "hat gelassen",      gruppe: "a → ie"  },
+  { infinitiv: "lassen",     praeteritum: "ließ",    perfekt: "hat gelassen",      gruppe: "a → ie"  },
   { infinitiv: "raten",      praeteritum: "riet",       perfekt: "hat geraten",       gruppe: "a → ie"  },
   { infinitiv: "schlafen",   praeteritum: "schlief",    perfekt: "hat geschlafen",    gruppe: "a → ie"  },
   { infinitiv: "helfen",     praeteritum: "half",       perfekt: "hat geholfen",      gruppe: "e → o"   },
@@ -653,43 +423,33 @@ const STAGES = [
   { cols: 5, rows: 6, trios: 10, emptySlots: 0 },
 ];
 
-let cards = [];
-let selectedCards = [];
-let moves = 0;
-let matchedTrios = 0;
-let lockBoard = false;
-let stageIndex = 0;
-let activeGruppe = "Alle";
-let completedStages = [];
+let cards = [], selectedCards = [], moves = 0, matchedTrios = 0;
+let lockBoard = false, stageIndex = 0, activeGruppe = "Alle", completedStages = [];
 
-const board        = document.getElementById("gameBoard");
-const infoLine     = document.getElementById("infoLine");
-const statMoves    = document.getElementById("statMoves");
-const statMatches  = document.getElementById("statMatches");
-const statTarget   = document.getElementById("statTarget");
-const statTotal    = document.getElementById("statTotal");
-const stageNum     = document.getElementById("stageNum");
-const gridSize     = document.getElementById("gridSize");
-const pairsNeeded  = document.getElementById("pairsNeeded");
+const board = document.getElementById("gameBoard");
+const infoLine = document.getElementById("infoLine");
+const statMoves = document.getElementById("statMoves");
+const statMatches = document.getElementById("statMatches");
+const statTarget = document.getElementById("statTarget");
+const statTotal = document.getElementById("statTotal");
+const stageNum = document.getElementById("stageNum");
+const gridSize = document.getElementById("gridSize");
+const pairsNeeded = document.getElementById("pairsNeeded");
 const progressFill = document.getElementById("progressFill");
-const stagesRow    = document.getElementById("stagesRow");
+const stagesRow = document.getElementById("stagesRow");
 const gruppeSelect = document.getElementById("gruppeSelect");
-const gruppeBar    = document.getElementById("gruppeBar");
-const newGameBtn   = document.getElementById("newGameBtn");
+const gruppeBar = document.getElementById("gruppeBar");
+const newGameBtn = document.getElementById("newGameBtn");
 const reshuffleBtn = document.getElementById("reshuffleBtn");
 const modalOverlay = document.getElementById("modalOverlay");
-const modalIcon    = document.getElementById("modalIcon");
-const modalTitle   = document.getElementById("modalTitle");
-const modalText    = document.getElementById("modalText");
-const modalBtn     = document.getElementById("modalBtn");
+const modalIcon = document.getElementById("modalIcon");
+const modalTitle = document.getElementById("modalTitle");
+const modalText = document.getElementById("modalText");
+const modalBtn = document.getElementById("modalBtn");
 
 function initGruppeUI() {
   const gruppen = ["Alle", ...new Set(verben.map(v => v.gruppe))];
-
-  gruppeSelect.innerHTML = gruppen.map(g =>
-    `<option value="${g}">${g}</option>`
-  ).join("");
-
+  gruppeSelect.innerHTML = gruppen.map(g => `<option value="${g}">${g}</option>`).join("");
   gruppeBar.innerHTML = "";
   gruppen.forEach((g, i) => {
     const pill = document.createElement("button");
@@ -706,12 +466,9 @@ function initGruppeUI() {
     });
     gruppeBar.appendChild(pill);
   });
-
   gruppeSelect.addEventListener("change", () => {
     activeGruppe = gruppeSelect.value;
-    document.querySelectorAll(".pill").forEach(p =>
-      p.classList.toggle("active", p.dataset.gruppe === activeGruppe)
-    );
+    document.querySelectorAll(".pill").forEach(p => p.classList.toggle("active", p.dataset.gruppe === activeGruppe));
     startGame(0);
   });
 }
@@ -720,9 +477,7 @@ function buildStagesRow() {
   stagesRow.innerHTML = "";
   STAGES.forEach((_, i) => {
     const d = document.createElement("div");
-    d.className = "stage-dot" +
-      (completedStages.includes(i) ? " done" : "") +
-      (i === stageIndex ? " active" : "");
+    d.className = "stage-dot" + (completedStages.includes(i) ? " done" : "") + (i === stageIndex ? " active" : "");
     stagesRow.appendChild(d);
   });
 }
@@ -737,41 +492,26 @@ function shuffle(arr) {
 }
 
 function getPool() {
-  if (activeGruppe === "Alle") return verben;
-  return verben.filter(v => v.gruppe === activeGruppe);
+  return activeGruppe === "Alle" ? verben : verben.filter(v => v.gruppe === activeGruppe);
 }
 
 function updateStats() {
   statMoves.textContent = moves;
   statMatches.textContent = matchedTrios;
-  progressFill.style.width =
-    STAGES[stageIndex].trios > 0
-      ? `${(matchedTrios / STAGES[stageIndex].trios) * 100}%`
-      : "0%";
+  progressFill.style.width = STAGES[stageIndex].trios > 0 ? `${(matchedTrios / STAGES[stageIndex].trios) * 100}%` : "0%";
 }
 
 function startGame(sIdx = 0) {
   stageIndex = sIdx;
   if (sIdx === 0) completedStages = [];
-
-  selectedCards = [];
-  moves = 0;
-  matchedTrios = 0;
-  lockBoard = false;
-
+  selectedCards = []; moves = 0; matchedTrios = 0; lockBoard = false;
   const stage = STAGES[stageIndex];
-  const pool  = getPool();
-
+  const pool = getPool();
   statTotal.textContent = pool.length;
-
   if (pool.length < stage.trios) {
     infoLine.textContent = `Zu wenige Verben in dieser Gruppe (${pool.length}). Wähle eine größere Gruppe.`;
-    board.innerHTML = "";
-    updateStats();
-    buildStagesRow();
-    return;
+    board.innerHTML = ""; updateStats(); buildStagesRow(); return;
   }
-
   const chosen = shuffle(pool).slice(0, stage.trios);
   cards = [];
   chosen.forEach((v, i) => {
@@ -780,18 +520,13 @@ function startGame(sIdx = 0) {
     cards.push({ id: `${i}-perf`, group: i, form: "perf", text: v.perfekt,     matched: false });
   });
   cards = shuffle(cards);
-
-  stageNum.textContent    = stageIndex + 1;
-  gridSize.textContent    = `${stage.cols}×${stage.rows}`;
+  stageNum.textContent = stageIndex + 1;
+  gridSize.textContent = `${stage.cols}×${stage.rows}`;
   pairsNeeded.textContent = stage.trios;
-  statTarget.textContent  = stage.trios;
-
+  statTarget.textContent = stage.trios;
   infoLine.textContent = `Stufe ${stageIndex + 1} — Finde ${stage.trios} Verbgruppen`;
   infoLine.className = "info-line";
-
-  updateStats();
-  buildStagesRow();
-  renderBoard();
+  updateStats(); buildStagesRow(); renderBoard();
 }
 
 function renderBoard() {
@@ -799,57 +534,42 @@ function renderBoard() {
   const stage = STAGES[stageIndex];
   board.style.gridTemplateColumns = `repeat(${stage.cols}, minmax(100px, 160px))`;
   board.style.maxWidth = `${stage.cols * 174}px`;
-
   cards.forEach((card, idx) => {
     const btn = document.createElement("button");
     btn.className = "card card-" + card.form;
     btn.textContent = card.text;
     btn.dataset.idx = idx;
-    if (card.matched) {
-      btn.classList.add("matched");
-      btn.disabled = true;
-    }
+    if (card.matched) { btn.classList.add("matched"); btn.disabled = true; }
     btn.addEventListener("click", () => onClick(idx));
     board.appendChild(btn);
   });
-
   for (let i = 0; i < STAGES[stageIndex].emptySlots; i++) {
     const slot = document.createElement("div");
     slot.className = "empty-slot";
     board.appendChild(slot);
   }
-
   updateStats();
 }
 
 function onClick(idx) {
-  if (lockBoard) return;
-  if (cards[idx].matched) return;
+  if (lockBoard || cards[idx].matched) return;
   if (selectedCards.some(s => s.idx === idx)) {
     selectedCards = selectedCards.filter(s => s.idx !== idx);
     board.children[idx].classList.remove("selected");
     return;
   }
   if (selectedCards.length === 3) return;
-
   board.children[idx].classList.add("selected");
   selectedCards.push({ idx, group: cards[idx].group, form: cards[idx].form });
-
-  if (selectedCards.length === 3) {
-    moves++;
-    updateStats();
-    checkTrio();
-  }
+  if (selectedCards.length === 3) { moves++; updateStats(); checkTrio(); }
 }
 
 function checkTrio() {
   lockBoard = true;
   const [a, b, c] = selectedCards;
-
   const sameGroup = a.group === b.group && b.group === c.group;
   const forms = new Set([a.form, b.form, c.form]);
   const allForms = forms.has("inf") && forms.has("prae") && forms.has("perf");
-
   if (sameGroup && allForms) {
     [a, b, c].forEach(s => {
       cards[s.idx].matched = true;
@@ -858,36 +578,20 @@ function checkTrio() {
       el.classList.add("matched");
       el.disabled = true;
     });
-
     matchedTrios++;
     selectedCards = [];
     lockBoard = false;
-
     infoLine.textContent = `✓ Richtig! ${matchedTrios} / ${STAGES[stageIndex].trios}`;
     infoLine.className = "info-line success";
     updateStats();
-
-    if (matchedTrios === STAGES[stageIndex].trios) {
-      lockBoard = true;
-      setTimeout(showStageComplete, 700);
-    }
+    if (matchedTrios === STAGES[stageIndex].trios) { lockBoard = true; setTimeout(showStageComplete, 700); }
   } else {
-    [a, b, c].forEach(s => {
-      const el = board.children[s.idx];
-      el.classList.remove("selected");
-      el.classList.add("wrong");
-    });
-
+    [a, b, c].forEach(s => { const el = board.children[s.idx]; el.classList.remove("selected"); el.classList.add("wrong"); });
     infoLine.textContent = "✗ Nicht richtig. Versuche es nochmal!";
     infoLine.className = "info-line";
-
     setTimeout(() => {
-      [a, b, c].forEach(s => {
-        const el = board.children[s.idx];
-        el.classList.remove("wrong");
-      });
-      selectedCards = [];
-      lockBoard = false;
+      [a, b, c].forEach(s => board.children[s.idx].classList.remove("wrong"));
+      selectedCards = []; lockBoard = false;
     }, 800);
   }
 }
@@ -895,9 +599,7 @@ function checkTrio() {
 function showStageComplete() {
   completedStages.push(stageIndex);
   buildStagesRow();
-
   const isLast = stageIndex === STAGES.length - 1;
-
   if (isLast) {
     modalIcon.textContent = "🏆";
     modalTitle.textContent = "Ausgezeichnet!";
@@ -912,13 +614,10 @@ function showStageComplete() {
     modalBtn.textContent = "Nächste Stufe →";
     modalBtn.onclick = () => { hideModal(); startGame(stageIndex + 1); };
   }
-
   setTimeout(() => modalOverlay.classList.add("visible"), 200);
 }
 
-function hideModal() {
-  modalOverlay.classList.remove("visible");
-}
+function hideModal() { modalOverlay.classList.remove("visible"); }
 
 newGameBtn.addEventListener("click", () => startGame(0));
 reshuffleBtn.addEventListener("click", () => startGame(stageIndex));
