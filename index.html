@@ -19,7 +19,7 @@
       --shadow-dark:  rgba(22,27,29,0.23);
       --accent-inf:   #5b8af0;
       --accent-prae:  #9b6fe0;
-      --accent-perf:  #4db8a0;
+      --accent-perf:  #b84da3;
       --green:        #4db8a0;
       --red:          #e07070;
     }
@@ -37,7 +37,7 @@
       --shadow-dark:  rgba(0,0,0,0.45);
       --accent-inf:   #5b8af0;
       --accent-prae:  #9b6fe0;
-      --accent-perf:  #4db8a0;
+      --accent-perf:  #b84da3;
       --green:        #4db8a0;
       --red:          #e07070;
     }
@@ -299,6 +299,7 @@
   </div>
 </div>
 
+<script src="verben.js"></script>
 <script>
 // THEME TOGGLE
 const html = document.documentElement;
@@ -310,52 +311,6 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.textContent = darkMode ? "☀️" : "🌙";
   toggleBtn.setAttribute("aria-label", darkMode ? "Light Mode" : "Dark Mode");
 });
-
-// VERBEN DATA
-const verben = [
-  { infinitiv: "bleiben",    praeteritum: "blieb",      perfekt: "ist geblieben",     gruppe: "ei → ie" },
-  { infinitiv: "schreiben",  praeteritum: "schrieb",    perfekt: "hat geschrieben",   gruppe: "ei → ie" },
-  { infinitiv: "scheinen",   praeteritum: "schien",     perfekt: "hat geschienen",    gruppe: "ei → ie" },
-  { infinitiv: "steigen",    praeteritum: "stieg",      perfekt: "ist gestiegen",     gruppe: "ei → ie" },
-  { infinitiv: "finden",     praeteritum: "fand",       perfekt: "hat gefunden",      gruppe: "i → a"   },
-  { infinitiv: "trinken",    praeteritum: "trank",      perfekt: "hat getrunken",     gruppe: "i → a"   },
-  { infinitiv: "singen",     praeteritum: "sang",       perfekt: "hat gesungen",      gruppe: "i → a"   },
-  { infinitiv: "beginnen",   praeteritum: "begann",     perfekt: "hat begonnen",      gruppe: "i → a"   },
-  { infinitiv: "gewinnen",   praeteritum: "gewann",     perfekt: "hat gewonnen",      gruppe: "i → a"   },
-  { infinitiv: "fliegen",    praeteritum: "flog",       perfekt: "ist geflogen",      gruppe: "ie → o"  },
-  { infinitiv: "ziehen",     praeteritum: "zog",        perfekt: "hat gezogen",       gruppe: "ie → o"  },
-  { infinitiv: "verlieren",  praeteritum: "verlor",     perfekt: "hat verloren",      gruppe: "ie → o"  },
-  { infinitiv: "frieren",    praeteritum: "fror",       perfekt: "ist gefroren",      gruppe: "ie → o"  },
-  { infinitiv: "essen",      praeteritum: "aß",         perfekt: "hat gegessen",      gruppe: "e → a"   },
-  { infinitiv: "geben",      praeteritum: "gab",        perfekt: "hat gegeben",       gruppe: "e → a"   },
-  { infinitiv: "lesen",      praeteritum: "las",        perfekt: "hat gelesen",       gruppe: "e → a"   },
-  { infinitiv: "sehen",      praeteritum: "sah",        perfekt: "hat gesehen",       gruppe: "e → a"   },
-  { infinitiv: "nehmen",     praeteritum: "nahm",       perfekt: "hat genommen",      gruppe: "e → a"   },
-  { infinitiv: "sprechen",   praeteritum: "sprach",     perfekt: "hat gesprochen",    gruppe: "e → a"   },
-  { infinitiv: "treffen",    praeteritum: "traf",       perfekt: "hat getroffen",     gruppe: "e → a"   },
-  { infinitiv: "fahren",     praeteritum: "fuhr",       perfekt: "ist gefahren",      gruppe: "a → u"   },
-  { infinitiv: "tragen",     praeteritum: "trug",       perfekt: "hat getragen",      gruppe: "a → u"   },
-  { infinitiv: "schlagen",   praeteritum: "schlug",     perfekt: "hat geschlagen",    gruppe: "a → u"   },
-  { infinitiv: "einladen",   praeteritum: "lud ein",    perfekt: "hat eingeladen",    gruppe: "a → u"   },
-  { infinitiv: "lassen",     praeteritum: "ließ",       perfekt: "hat gelassen",      gruppe: "a → ie"  },
-  { infinitiv: "raten",      praeteritum: "riet",       perfekt: "hat geraten",       gruppe: "a → ie"  },
-  { infinitiv: "schlafen",   praeteritum: "schlief",    perfekt: "hat geschlafen",    gruppe: "a → ie"  },
-  { infinitiv: "helfen",     praeteritum: "half",       perfekt: "hat geholfen",      gruppe: "e → o"   },
-  { infinitiv: "sterben",    praeteritum: "starb",      perfekt: "ist gestorben",     gruppe: "e → o"   },
-  { infinitiv: "werfen",     praeteritum: "warf",       perfekt: "hat geworfen",      gruppe: "e → o"   },
-  { infinitiv: "gehen",      praeteritum: "ging",       perfekt: "ist gegangen",      gruppe: "Besondere" },
-  { infinitiv: "stehen",     praeteritum: "stand",      perfekt: "hat/ist gestanden", gruppe: "Besondere" },
-  { infinitiv: "kommen",     praeteritum: "kam",        perfekt: "ist gekommen",      gruppe: "Besondere" },
-  { infinitiv: "tun",        praeteritum: "tat",        perfekt: "hat getan",         gruppe: "Besondere" },
-  { infinitiv: "sein",       praeteritum: "war",        perfekt: "ist gewesen",       gruppe: "Besondere" },
-  { infinitiv: "werden",     praeteritum: "wurde",      perfekt: "ist geworden",      gruppe: "Besondere" },
-  { infinitiv: "wissen",     praeteritum: "wusste",     perfekt: "hat gewusst",       gruppe: "Mischverben" },
-  { infinitiv: "kennen",     praeteritum: "kannte",     perfekt: "hat gekannt",       gruppe: "Mischverben" },
-  { infinitiv: "nennen",     praeteritum: "nannte",     perfekt: "hat genannt",       gruppe: "Mischverben" },
-  { infinitiv: "denken",     praeteritum: "dachte",     perfekt: "hat gedacht",       gruppe: "Mischverben" },
-  { infinitiv: "bringen",    praeteritum: "brachte",    perfekt: "hat gebracht",      gruppe: "Mischverben" },
-  { infinitiv: "verbringen", praeteritum: "verbrachte", perfekt: "hat verbracht",     gruppe: "Mischverben" },
-];
 
 const STAGES = [
   { cols: 3, rows: 3, trios: 3,  emptySlots: 0 },
