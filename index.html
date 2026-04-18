@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Verben — Präteritum &amp; Perfekt</title>
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@700,800&display=swap"
+    rel="stylesheet">
   <style>
-    /* ── LIGHT (neumorphic) ── */
-    :root, [data-theme="light"] {
-      --bg:           #EFF2F9;
-      --surface:      #E4EBF1;
-      --surface2:     #F7F9FC;
-      --dark:         #6E7F8D;
-      --text:         #3a4a55;
-      --muted:        #8a9baa;
-      --faint:        #B5BFC6;
+    :root,
+    [data-theme="light"] {
+      --bg: #EFF2F9;
+      --surface: #E4EBF1;
+      --surface2: #F7F9FC;
+      --dark: #6E7F8D;
+      --text: #3a4a55;
+      --muted: #8a9baa;
+      --faint: #B5BFC6;
       --shadow-light: #FAFBFF;
-      --shadow-dark:  rgba(22,27,29,0.23);
-      --accent-inf:   #5b8af0;
-      --accent-prae:  #9b6fe0;
-      --accent-perf:  #b84da3;
-      --green:        #4db8a0;
-      --red:          #e07070;
+      --shadow-dark: rgba(22, 27, 29, 0.23);
+      --accent-inf: #5b8af0;
+      --accent-prae: #9b6fe0;
+      --accent-perf: #b84da3;
+      --green: #4db8a0;
+      --red: #e07070;
     }
 
-    /* ── DARK (neumorphic) ── */
     [data-theme="dark"] {
-      --bg:           #1e2025;
-      --surface:      #1a1d22;
-      --surface2:     #22262d;
-      --dark:         #c8d6e5;
-      --text:         #b0bec8;
-      --muted:        #6a7f8d;
-      --faint:        #404a54;
-      --shadow-light: rgba(255,255,255,0.04);
-      --shadow-dark:  rgba(0,0,0,0.45);
-      --accent-inf:   #5b8af0;
-      --accent-prae:  #9b6fe0;
-      --accent-perf:  #b84da3;
-      --green:        #4db8a0;
-      --red:          #e07070;
+      --bg: #1e2025;
+      --surface: #1a1d22;
+      --surface2: #22262d;
+      --dark: #c8d6e5;
+      --text: #b0bec8;
+      --muted: #6a7f8d;
+      --faint: #404a54;
+      --shadow-light: rgba(255, 255, 255, 0.04);
+      --shadow-dark: rgba(0, 0, 0, 0.45);
+      --accent-inf: #5b8af0;
+      --accent-prae: #9b6fe0;
+      --accent-perf: #b84da3;
+      --green: #4db8a0;
+      --red: #e07070;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       background: var(--bg);
@@ -53,132 +59,358 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
 
-    /* HEADER */
-    header { text-align: center; margin-bottom: 40px; position: relative; }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
 
     .logo-tag {
       display: inline-block;
       background: var(--surface);
       color: var(--muted);
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      padding: 5px 14px; border-radius: 20px; margin-bottom: 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
       box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
     }
 
     h1 {
       font-family: "Cabinet Grotesk", sans-serif;
-      font-size: clamp(28px, 5vw, 48px); font-weight: 800;
-      color: var(--dark); line-height: 1.1; margin-bottom: 8px; letter-spacing: -1px;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
     }
 
-    .subtitle { color: var(--muted); font-size: 15px; font-weight: 500; }
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+    }
 
-    /* THEME TOGGLE */
     .theme-toggle {
-      position: absolute; top: 0; right: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
       background: var(--bg);
-      border: none; border-radius: 50%;
-      width: 42px; height: 42px;
-      cursor: pointer; font-size: 18px;
-      display: flex; align-items: center; justify-content: center;
+      border: none;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
       transition: all 0.2s;
       color: var(--dark);
     }
-    .theme-toggle:hover { box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light); }
-    .theme-toggle:active { box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -3px -3px 7px var(--shadow-light); }
 
-    /* CONTROLS */
+    .theme-toggle:hover {
+      box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+    }
+
+    .theme-toggle:active {
+      box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -3px -3px 7px var(--shadow-light);
+    }
+
+    .lang-switch-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border-radius: 30px;
+      padding: 5px;
+      gap: 2px;
+      box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
+    }
+
+    .lang-btn {
+      border: none;
+      border-radius: 24px;
+      padding: 7px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+      background: transparent;
+      color: var(--muted);
+    }
+
+    .lang-btn.active {
+      background: var(--dark);
+      color: var(--bg);
+      box-shadow: 3px 3px 8px var(--shadow-dark), -3px -3px 8px var(--shadow-light);
+    }
+
+    .lang-btn:not(.active):hover {
+      color: var(--text);
+    }
+
     .controls {
-      display: flex; flex-wrap: wrap; gap: 12px;
-      align-items: center; justify-content: space-between;
-      background: var(--bg); border-radius: 20px;
-      padding: 18px 22px; margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg);
+      border-radius: 20px;
+      padding: 18px 22px;
+      margin-bottom: 24px;
       box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
       transition: background 0.3s, box-shadow 0.3s;
     }
 
-    .controls-left { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .controls-left {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-    label { display: none; }
-    select { display: none; }
+    .controls-progress {
+      flex: 1;
+      min-width: 120px;
+      max-width: 340px;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .progress-meta span {
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .progress-track {
+      height: 6px;
+      background: var(--surface);
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: inset 2px 2px 4px var(--shadow-dark);
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-inf), var(--accent-perf));
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+
+    label {
+      display: none;
+    }
+
+    select {
+      display: none;
+    }
 
     .btn {
-      border: none; border-radius: 12px; padding: 9px 20px;
-      font-size: 13px; font-weight: 600; font-family: inherit;
-      cursor: pointer; transition: all 0.15s;
-      background: var(--bg); color: var(--text);
+      border: none;
+      border-radius: 12px;
+      padding: 9px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s;
+      background: var(--bg);
+      color: var(--text);
       box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
       letter-spacing: 0.3px;
     }
-    .btn:hover { box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light); }
-    .btn:active { box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -3px -3px 7px var(--shadow-light); transform: scale(0.98); }
-    .btn-primary { background: var(--dark); color: var(--bg); }
-    .btn-primary:hover { opacity: 0.9; }
 
-    /* STATS */
-    .stats { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn:hover {
+      box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+    }
+
+    .btn:active {
+      box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -3px -3px 7px var(--shadow-light);
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .stats {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
     .stat {
-      background: var(--bg); border-radius: 12px;
-      padding: 8px 16px; text-align: center; min-width: 80px;
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 8px 16px;
+      text-align: center;
+      min-width: 80px;
       box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -3px -3px 7px var(--shadow-light);
       transition: background 0.3s;
     }
-    .stat-label { font-size: 10px; color: var(--muted); letter-spacing: 1.2px; text-transform: uppercase; display: block; margin-bottom: 2px; font-weight: 600; }
-    .stat-value { font-size: 18px; font-weight: 700; color: var(--dark); font-variant-numeric: tabular-nums; font-family: "Cabinet Grotesk", sans-serif; }
 
-    /* GRUPPE FILTER */
-    .gruppe-bar { display: flex; flex-direction: row; flex-wrap: wrap; gap: 4px; margin-bottom: 24px; align-items: center; }
+    .stat-label {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+      font-weight: 600;
+    }
+
+    .stat-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      font-variant-numeric: tabular-nums;
+      font-family: "Cabinet Grotesk", sans-serif;
+    }
+
+    .gruppe-bar {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 24px;
+      align-items: center;
+    }
 
     .pill {
-      background: none; border: none; cursor: pointer;
-      font-family: inherit; display: flex; align-items: center;
-      gap: 8px; padding: 2px 8px 2px 0; transition: all 0.2s; line-height: 1;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 2px 8px 2px 0;
+      transition: all 0.2s;
+      line-height: 1;
     }
+
     .pill-num {
-      font-size: clamp(26px, 3.5vw, 38px); font-weight: 800;
-      font-family: "Cabinet Grotesk", sans-serif; color: var(--faint);
-      letter-spacing: -1px; line-height: 1;
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 800;
+      font-family: "Cabinet Grotesk", sans-serif;
+      color: var(--faint);
+      letter-spacing: -1px;
+      line-height: 1;
       transition: color 0.2s, transform 0.2s;
-      font-variant-numeric: tabular-nums; min-width: 2.2ch; text-align: right;
+      font-variant-numeric: tabular-nums;
+      min-width: 2.2ch;
+      text-align: right;
     }
+
     .pill-name {
-      font-size: 13px; font-weight: 600; color: var(--text); letter-spacing: 0.3px;
-      opacity: 0; max-width: 0; overflow: hidden; white-space: nowrap;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.3px;
+      opacity: 0;
+      max-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
       transition: opacity 0.2s, max-width 0.25s;
     }
-    .pill:hover .pill-num { color: var(--muted); }
-    .pill.active .pill-num { color: var(--dark); transform: scale(1.08); }
-    .pill.active .pill-name { opacity: 1; max-width: 200px; }
-    .pill:hover .pill-name { opacity: 0.5; max-width: 200px; }
 
-    /* INFO */
-    .info-line { text-align: center; font-size: 14px; color: var(--muted); min-height: 22px; margin-bottom: 10px; transition: color 0.3s; font-weight: 500; }
-    .info-line.success { color: var(--green); font-weight: 600; }
+    .pill:hover .pill-num {
+      color: var(--muted);
+    }
 
-    /* LEGEND */
-    .legend { display: flex; gap: 20px; justify-content: center; margin-bottom: 22px; flex-wrap: wrap; }
-    .legend-item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--muted); font-weight: 500; }
-    .legend-dot { width: 10px; height: 10px; border-radius: 3px; }
-    .dot-inf  { background: var(--accent-inf);  }
-    .dot-prae { background: var(--accent-prae); }
-    .dot-perf { background: var(--accent-perf); }
+    .pill.active .pill-num {
+      color: var(--dark);
+      transform: scale(1.08);
+    }
 
-    /* GAME GRID */
-    .game-area { display: grid; gap: 12px; justify-content: center; justify-items: center; margin: 0 auto; }
+    .pill.active .pill-name {
+      opacity: 1;
+      max-width: 200px;
+    }
+
+    .pill:hover .pill-name {
+      opacity: 0.5;
+      max-width: 200px;
+    }
+
+    .info-line {
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+      min-height: 22px;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+
+    .info-line.success {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .game-area {
+      display: grid;
+      gap: 12px;
+      justify-content: center;
+      justify-items: center;
+      margin: 0 auto;
+    }
 
     /* CARD */
     .card {
-      width: 100%; max-width: 160px; min-height: 82px; border-radius: 18px;
-      border: none; padding: 14px 12px; font-size: 14px; font-weight: 600;
-      font-family: inherit; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; line-height: 1.35; word-break: break-word;
+      width: 100%;
+      max-width: 160px;
+      min-height: 82px;
+      border-radius: 18px;
+      border: none;
+      padding: 14px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.35;
+      word-break: break-word;
       transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
-      position: relative; background: var(--bg); color: var(--text);
+      position: relative;
+      background: var(--bg);
+      color: var(--text);
       box-shadow: 5px 5px 12px var(--shadow-dark), -5px -5px 12px var(--shadow-light);
     }
 
@@ -188,340 +420,594 @@
     }
 
     .card::after {
-      content: ""; position: absolute; top: 0; left: 50%;
-      transform: translateX(-50%); width: 36px; height: 3px;
-      border-radius: 0 0 4px 4px; opacity: 0.7;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 3px;
+      border-radius: 0 0 4px 4px;
+      opacity: 0.7;
     }
 
-    .card-inf  { color: var(--accent-inf);  } .card-inf::after  { background: var(--accent-inf);  }
-    .card-prae { color: var(--accent-prae); } .card-prae::after { background: var(--accent-prae); }
-    .card-perf { color: var(--accent-perf); } .card-perf::after { background: var(--accent-perf); }
+    .card-inf {
+      color: var(--accent-inf);
+      
+    }
 
-    .card.selected { box-shadow: inset 4px 4px 10px var(--shadow-dark), inset -4px -4px 10px var(--shadow-light); transform: scale(0.97); }
-    .card.matched { background: var(--bg) !important; color: var(--green) !important; cursor: default; transform: none; box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light); }
-    .card.matched::after { background: var(--green) !important; }
-    .card.wrong { color: var(--red) !important; box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light); }
-    .card:disabled { cursor: default; }
+    .card-inf::after {
+      background: var(--accent-inf);
+    }
 
-    .empty-slot { max-width: 160px; min-height: 82px; border-radius: 18px; background: var(--bg); box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light); }
+    .card-prae {
+      color: var(--accent-prae);
+    }
 
-    /* PROGRESS */
-    .progress-wrap {
-      margin-bottom: 22px; background: var(--bg); border-radius: 16px; padding: 16px 20px;
-      box-shadow: 5px 5px 12px var(--shadow-dark), -5px -5px 12px var(--shadow-light);
+    .card-prae::after {
+      background: var(--accent-prae);
+    }
+
+    .card-perf {
+      color: var(--accent-perf);
+    }
+
+    .card-perf::after {
+      background: var(--accent-perf);
+    }
+
+    .card.selected {
+      box-shadow: inset 4px 4px 10px var(--shadow-dark), inset -4px -4px 10px var(--shadow-light);
+      transform: scale(0.97);
+    }
+
+    .card.matched {
+      background: var(--bg) !important;
+      color: var(--green) !important;
+      cursor: default;
+      transform: none;
+      box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light);
+    }
+
+    .card.matched::after {
+      background: var(--green) !important;
+    }
+
+    .card.wrong {
+      color: var(--red) !important;
+      box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light);
+    }
+
+    .card:disabled {
+      cursor: default;
+    }
+
+    .card-translation {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.2px;
+      line-height: 1.2;
+      opacity: 0;
+      transition: opacity 0.3s;
+      position: absolute;
+      bottom: 7px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    .card.matched .card-translation {
+      opacity: 1;
+    }
+
+    .empty-slot {
+      max-width: 160px;
+      min-height: 82px;
+      border-radius: 18px;
+      background: var(--bg);
+      box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light);
+    }
+
+    /* STAGES & LEGEND — внизу */
+    .stages-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 36px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .stages {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .stage-dot {
+      width: 28px;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--surface);
+      box-shadow: inset 2px 2px 4px var(--shadow-dark);
       transition: background 0.3s;
     }
-    .progress-meta { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 12px; font-weight: 500; }
-    .progress-meta span { font-weight: 700; color: var(--dark); }
-    .progress-track { height: 6px; background: var(--surface); border-radius: 3px; overflow: hidden; box-shadow: inset 2px 2px 4px var(--shadow-dark); }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-inf), var(--accent-perf)); border-radius: 3px; transition: width 0.4s ease; }
 
-    /* STAGES */
-    .stages { display: flex; gap: 8px; justify-content: center; margin-bottom: 20px; }
-    .stage-dot { width: 28px; height: 6px; border-radius: 3px; background: var(--surface); box-shadow: inset 2px 2px 4px var(--shadow-dark); transition: background 0.3s; }
-    .stage-dot.done  { background: var(--green); box-shadow: 2px 2px 5px rgba(77,184,160,0.3); }
-    .stage-dot.active { background: var(--accent-inf); box-shadow: 2px 2px 5px rgba(91,138,240,0.3); }
-    .stages-label { font-size: 11px; color: var(--muted); text-align: center; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+    .stage-dot.done {
+      background: var(--green);
+      box-shadow: 2px 2px 5px rgba(77, 184, 160, 0.3);
+    }
+
+    .stage-dot.active {
+      background: var(--accent-inf);
+      box-shadow: 2px 2px 5px rgba(91, 138, 240, 0.3);
+    }
+
+    .legend {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+    }
+
+    .dot-inf {
+      background: var(--accent-inf);
+    }
+
+    .dot-prae {
+      background: var(--accent-prae);
+    }
+
+    .dot-perf {
+      background: var(--accent-perf);
+    }
 
     /* MODAL */
-    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 100; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(8px); }
-    .modal-overlay.visible { opacity: 1; pointer-events: all; }
-    .modal { background: var(--bg); border-radius: 28px; padding: 44px 40px; max-width: 400px; width: 90%; text-align: center; transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: 12px 12px 28px var(--shadow-dark), -12px -12px 28px var(--shadow-light); }
-    .modal-overlay.visible .modal { transform: scale(1); }
-    .modal-icon { font-size: 52px; margin-bottom: 16px; }
-    .modal h2 { font-family: "Cabinet Grotesk", sans-serif; font-size: 26px; font-weight: 800; color: var(--dark); margin-bottom: 10px; }
-    .modal p { color: var(--muted); font-size: 15px; line-height: 1.6; margin-bottom: 28px; font-weight: 500; }
-    .modal .btn { width: 100%; padding: 14px; font-size: 15px; border-radius: 14px; }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      backdrop-filter: blur(8px);
+    }
 
-    .footer { text-align: center; margin-top: 40px; font-size: 12px; color: var(--faint); font-weight: 500; letter-spacing: 0.3px; }
+    .modal-overlay.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--bg);
+      border-radius: 28px;
+      padding: 44px 40px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      transform: scale(0.9);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 12px 12px 28px var(--shadow-dark), -12px -12px 28px var(--shadow-light);
+    }
+
+    .modal-overlay.visible .modal {
+      transform: scale(1);
+    }
+
+    .modal-icon {
+      font-size: 52px;
+      margin-bottom: 16px;
+    }
+
+    .modal h2 {
+      font-family: "Cabinet Grotesk", sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .modal p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .modal .btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 15px;
+      border-radius: 14px;
+    }
 
     @media (max-width: 600px) {
-      .controls { flex-direction: column; align-items: flex-start; }
-      .card { max-width: 130px; min-height: 70px; font-size: 13px; }
-      .empty-slot { max-width: 130px; min-height: 70px; }
-      .theme-toggle { top: -8px; right: -8px; }
+      .controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .controls-progress {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .card {
+        max-width: 130px;
+        min-height: 70px;
+        font-size: 13px;
+      }
+
+      .empty-slot {
+        max-width: 130px;
+        min-height: 70px;
+      }
+
+      .theme-toggle {
+        top: -8px;
+        right: -8px;
+      }
+
+      .lang-switch-wrap {
+        top: -8px;
+        left: -8px;
+      }
     }
   </style>
 </head>
+
 <body>
-<div class="wrap">
-  <header>
-    <div class="logo-tag">Deutsch lernen</div>
-    <h1>Unregelmäßige Verben</h1>
-    <p class="subtitle">Verbinde Infinitiv · Präteritum · Perfekt</p>
-    <button class="theme-toggle" id="themeToggle" aria-label="Dark/Light Mode umschalten" title="Dark/Light Mode">🌙</button>
-  </header>
+  <div class="wrap">
+    <header>
+      <div class="logo-tag">Deutsch lernen</div>
+      <h1>Unregelmäßige Verben</h1>
+      <p class="subtitle">Verbinde Infinitiv · Präteritum · Perfekt</p>
+      <button class="theme-toggle" id="themeToggle" aria-label="Dark/Light Mode umschalten"
+        title="Dark/Light Mode">🌙</button>
+      <div class="lang-switch-wrap">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="uk">УКР</button>
+          <button class="lang-btn" data-lang="en">ENG</button>
+        </div>
+      </div>
+    </header>
 
-  <div class="controls">
-    <div class="controls-left">
-      <label for="gruppeSelect" style="display:none">Gruppe:</label>
-      <select id="gruppeSelect" style="display:none"></select>
-      <button class="btn btn-primary" id="newGameBtn">Neues Spiel</button>
-      <button class="btn" id="reshuffleBtn">Mischen</button>
+    <div class="controls">
+      <div class="controls-left">
+        <label for="gruppeSelect" style="display:none">Gruppe:</label>
+        <select id="gruppeSelect" style="display:none"></select>
+        <button class="btn btn-primary" id="newGameBtn">Neues Spiel</button>
+        <button class="btn" id="reshuffleBtn">Mischen</button>
+      </div>
+      <div class="controls-progress">
+        <div class="progress-meta">
+          <div>Stufe <span id="stageNum">1</span> / 6 &nbsp;·&nbsp; Feld <span id="gridSize">3×3</span></div>
+          <div>Paare: <span id="pairsNeeded">3</span></div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="stat-label">Züge</span><span class="stat-value" id="statMoves">0</span></div>
+        <div class="stat"><span class="stat-label">Gruppen</span><span class="stat-value"><span
+              id="statMatches">0</span>/<span id="statTarget">3</span></span></div>
+        <div class="stat"><span class="stat-label">Verben</span><span class="stat-value" id="statTotal">0</span></div>
+      </div>
     </div>
-    <div class="stats">
-      <div class="stat"><span class="stat-label">Züge</span><span class="stat-value" id="statMoves">0</span></div>
-      <div class="stat"><span class="stat-label">Gruppen</span><span class="stat-value"><span id="statMatches">0</span>/<span id="statTarget">3</span></span></div>
-      <div class="stat"><span class="stat-label">Verben</span><span class="stat-value" id="statTotal">0</span></div>
+
+    <div class="gruppe-bar" id="gruppeBar"></div>
+
+    <div class="info-line" id="infoLine">Wähle eine Karte…</div>
+    <div class="game-area" id="gameBoard"></div>
+
+    <div class="stages-label">Fortschritt der Stufen</div>
+    <div class="stages" id="stagesRow"></div>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot dot-inf"></div> Infinitiv
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot dot-prae"></div> Präteritum
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot dot-perf"></div> Perfekt
+      </div>
     </div>
   </div>
 
-  <div class="gruppe-bar" id="gruppeBar"></div>
-
-  <div class="progress-wrap">
-    <div class="progress-meta">
-      <div>Stufe <span id="stageNum">1</span> / 6 &nbsp;·&nbsp; Feld <span id="gridSize">3×3</span></div>
-      <div>Paare: <span id="pairsNeeded">3</span></div>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-icon" id="modalIcon">🎉</div>
+      <h2 id="modalTitle">Gut gemacht!</h2>
+      <p id="modalText">Du hast alle Paare gefunden!</p>
+      <button class="btn btn-primary" id="modalBtn">Weiter</button>
     </div>
-    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
   </div>
 
-  <div class="stages-label">Fortschritt der Stufen</div>
-  <div class="stages" id="stagesRow"></div>
-
-  <div class="legend">
-    <div class="legend-item"><div class="legend-dot dot-inf"></div> Infinitiv</div>
-    <div class="legend-item"><div class="legend-dot dot-prae"></div> Präteritum</div>
-    <div class="legend-item"><div class="legend-dot dot-perf"></div> Perfekt</div>
-  </div>
-
-  <div class="info-line" id="infoLine">Wähle eine Karte…</div>
-  <div class="game-area" id="gameBoard"></div>
-  <div class="footer">Verbinde alle drei Formen eines Verbs: Infinitiv + Präteritum + Perfekt</div>
-</div>
-
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <div class="modal-icon" id="modalIcon">🎉</div>
-    <h2 id="modalTitle">Gut gemacht!</h2>
-    <p id="modalText">Du hast alle Paare gefunden!</p>
-    <button class="btn btn-primary" id="modalBtn">Weiter</button>
-  </div>
-</div>
-
-<script src="verben.js"></script>
-<script>
-// THEME TOGGLE
-const html = document.documentElement;
-const toggleBtn = document.getElementById("themeToggle");
-let darkMode = false;
-toggleBtn.addEventListener("click", () => {
-  darkMode = !darkMode;
-  html.setAttribute("data-theme", darkMode ? "dark" : "light");
-  toggleBtn.textContent = darkMode ? "☀️" : "🌙";
-  toggleBtn.setAttribute("aria-label", darkMode ? "Light Mode" : "Dark Mode");
-});
-
-const STAGES = [
-  { cols: 3, rows: 3, trios: 3,  emptySlots: 0 },
-  { cols: 3, rows: 4, trios: 4,  emptySlots: 0 },
-  { cols: 3, rows: 5, trios: 5,  emptySlots: 0 },
-  { cols: 4, rows: 5, trios: 6,  emptySlots: 2 },
-  { cols: 4, rows: 6, trios: 8,  emptySlots: 0 },
-  { cols: 5, rows: 6, trios: 10, emptySlots: 0 },
-];
-
-let cards = [], selectedCards = [], moves = 0, matchedTrios = 0;
-let lockBoard = false, stageIndex = 0, activeGruppe = "Alle", completedStages = [];
-
-const board        = document.getElementById("gameBoard");
-const infoLine     = document.getElementById("infoLine");
-const statMoves    = document.getElementById("statMoves");
-const statMatches  = document.getElementById("statMatches");
-const statTarget   = document.getElementById("statTarget");
-const statTotal    = document.getElementById("statTotal");
-const stageNum     = document.getElementById("stageNum");
-const gridSize     = document.getElementById("gridSize");
-const pairsNeeded  = document.getElementById("pairsNeeded");
-const progressFill = document.getElementById("progressFill");
-const stagesRow    = document.getElementById("stagesRow");
-const gruppeSelect = document.getElementById("gruppeSelect");
-const gruppeBar    = document.getElementById("gruppeBar");
-const newGameBtn   = document.getElementById("newGameBtn");
-const reshuffleBtn = document.getElementById("reshuffleBtn");
-const modalOverlay = document.getElementById("modalOverlay");
-const modalIcon    = document.getElementById("modalIcon");
-const modalTitle   = document.getElementById("modalTitle");
-const modalText    = document.getElementById("modalText");
-const modalBtn     = document.getElementById("modalBtn");
-
-function initGruppeUI() {
-  const gruppen = ["Alle", ...new Set(verben.map(v => v.gruppe))];
-  gruppeSelect.innerHTML = gruppen.map(g => `<option value="${g}">${g}</option>`).join("");
-  gruppeBar.innerHTML = "";
-  gruppen.forEach((g, i) => {
-    const pill = document.createElement("button");
-    pill.className = "pill" + (g === "Alle" ? " active" : "");
-    pill.dataset.gruppe = g;
-    const num = String(i + 1).padStart(2, "0");
-    pill.innerHTML = `<span class="pill-num">${num}</span><span class="pill-name">${g}</span>`;
-    pill.addEventListener("click", () => {
-      activeGruppe = g;
-      document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
-      pill.classList.add("active");
-      gruppeSelect.value = g;
-      startGame(0);
+  <script src="verben.js"></script>
+  <script>
+    const html = document.documentElement;
+    const toggleBtn = document.getElementById("themeToggle");
+    let darkMode = false;
+    toggleBtn.addEventListener("click", () => {
+      darkMode = !darkMode;
+      html.setAttribute("data-theme", darkMode ? "dark" : "light");
+      toggleBtn.textContent = darkMode ? "☀️" : "🌙";
+      toggleBtn.setAttribute("aria-label", darkMode ? "Light Mode" : "Dark Mode");
     });
-    gruppeBar.appendChild(pill);
-  });
-  gruppeSelect.addEventListener("change", () => {
-    activeGruppe = gruppeSelect.value;
-    document.querySelectorAll(".pill").forEach(p => p.classList.toggle("active", p.dataset.gruppe === activeGruppe));
+
+    let activeLang = "uk";
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeLang = btn.dataset.lang;
+        document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        updateTranslations();
+      });
+    });
+
+    function updateTranslations() {
+      document.querySelectorAll(".card-inf.matched").forEach(el => {
+        const idx = parseInt(el.dataset.idx);
+        const card = cards[idx];
+        if (!card) return;
+        const verb = card.verbRef;
+        if (!verb) return;
+        const tr = el.querySelector(".card-translation");
+        if (tr) tr.textContent = activeLang === "uk" ? (verb.uk || "") : (verb.en || "");
+      });
+    }
+
+    const STAGES = [
+      { cols: 3, rows: 3, trios: 3, emptySlots: 0 },
+      { cols: 3, rows: 4, trios: 4, emptySlots: 0 },
+      { cols: 3, rows: 5, trios: 5, emptySlots: 0 },
+      { cols: 4, rows: 5, trios: 6, emptySlots: 2 },
+      { cols: 4, rows: 6, trios: 8, emptySlots: 0 },
+      { cols: 5, rows: 6, trios: 10, emptySlots: 0 },
+    ];
+
+    let cards = [], selectedCards = [], moves = 0, matchedTrios = 0;
+    let lockBoard = false, stageIndex = 0, activeGruppe = "Alle", completedStages = [];
+
+    const board = document.getElementById("gameBoard");
+    const infoLine = document.getElementById("infoLine");
+    const statMoves = document.getElementById("statMoves");
+    const statMatches = document.getElementById("statMatches");
+    const statTarget = document.getElementById("statTarget");
+    const statTotal = document.getElementById("statTotal");
+    const stageNum = document.getElementById("stageNum");
+    const gridSize = document.getElementById("gridSize");
+    const pairsNeeded = document.getElementById("pairsNeeded");
+    const progressFill = document.getElementById("progressFill");
+    const stagesRow = document.getElementById("stagesRow");
+    const gruppeSelect = document.getElementById("gruppeSelect");
+    const gruppeBar = document.getElementById("gruppeBar");
+    const newGameBtn = document.getElementById("newGameBtn");
+    const reshuffleBtn = document.getElementById("reshuffleBtn");
+    const modalOverlay = document.getElementById("modalOverlay");
+    const modalIcon = document.getElementById("modalIcon");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalText = document.getElementById("modalText");
+    const modalBtn = document.getElementById("modalBtn");
+
+    function initGruppeUI() {
+      const gruppen = ["Alle", ...new Set(verben.map(v => v.gruppe))];
+      gruppeSelect.innerHTML = gruppen.map(g => `<option value="${g}">${g}</option>`).join("");
+      gruppeBar.innerHTML = "";
+      gruppen.forEach((g, i) => {
+        const pill = document.createElement("button");
+        pill.className = "pill" + (g === "Alle" ? " active" : "");
+        pill.dataset.gruppe = g;
+        const num = String(i + 1).padStart(2, "0");
+        pill.innerHTML = `<span class="pill-num">${num}</span><span class="pill-name">${g}</span>`;
+        pill.addEventListener("click", () => {
+          activeGruppe = g;
+          document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
+          pill.classList.add("active");
+          gruppeSelect.value = g;
+          startGame(0);
+        });
+        gruppeBar.appendChild(pill);
+      });
+      gruppeSelect.addEventListener("change", () => {
+        activeGruppe = gruppeSelect.value;
+        document.querySelectorAll(".pill").forEach(p => p.classList.toggle("active", p.dataset.gruppe === activeGruppe));
+        startGame(0);
+      });
+    }
+
+    function buildStagesRow() {
+      stagesRow.innerHTML = "";
+      STAGES.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "stage-dot" + (completedStages.includes(i) ? " done" : "") + (i === stageIndex ? " active" : "");
+        stagesRow.appendChild(d);
+      });
+    }
+
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function getPool() {
+      return activeGruppe === "Alle" ? verben : verben.filter(v => v.gruppe === activeGruppe);
+    }
+
+    function updateStats() {
+      statMoves.textContent = moves;
+      statMatches.textContent = matchedTrios;
+      progressFill.style.width = STAGES[stageIndex].trios > 0 ? `${(matchedTrios / STAGES[stageIndex].trios) * 100}%` : "0%";
+    }
+
+    function startGame(sIdx = 0) {
+      stageIndex = sIdx;
+      if (sIdx === 0) completedStages = [];
+      selectedCards = []; moves = 0; matchedTrios = 0; lockBoard = false;
+      const stage = STAGES[stageIndex];
+      const pool = getPool();
+      statTotal.textContent = pool.length;
+      if (pool.length < stage.trios) {
+        infoLine.textContent = `Zu wenige Verben (${pool.length}). Wähle eine größere Gruppe.`;
+        board.innerHTML = ""; updateStats(); buildStagesRow(); return;
+      }
+      const chosen = shuffle(pool).slice(0, stage.trios);
+      cards = [];
+      chosen.forEach((v, i) => {
+        cards.push({ id: `${i}-inf`, group: i, form: "inf", text: v.infinitiv, matched: false, verbRef: v });
+        cards.push({ id: `${i}-prae`, group: i, form: "prae", text: v.praeteritum, matched: false, verbRef: v });
+        cards.push({ id: `${i}-perf`, group: i, form: "perf", text: v.perfekt, matched: false, verbRef: v });
+      });
+      cards = shuffle(cards);
+      stageNum.textContent = stageIndex + 1;
+      gridSize.textContent = `${stage.cols}×${stage.rows}`;
+      pairsNeeded.textContent = stage.trios;
+      statTarget.textContent = stage.trios;
+      infoLine.textContent = "Wähle eine Karte…";
+      infoLine.className = "info-line";
+      updateStats(); buildStagesRow(); renderBoard();
+    }
+
+    function renderBoard() {
+      board.innerHTML = "";
+      const stage = STAGES[stageIndex];
+      board.style.gridTemplateColumns = `repeat(${stage.cols}, minmax(100px, 160px))`;
+      board.style.maxWidth = `${stage.cols * 174}px`;
+      cards.forEach((card, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "card card-" + card.form;
+        btn.dataset.idx = idx;
+
+        const textSpan = document.createElement("span");
+        textSpan.textContent = card.text;
+        btn.appendChild(textSpan);
+
+        if (card.form === "inf") {
+          const tr = document.createElement("span");
+          tr.className = "card-translation";
+          const verb = card.verbRef;
+          tr.textContent = activeLang === "uk" ? (verb.uk || "") : (verb.en || "");
+          btn.appendChild(tr);
+        }
+
+        if (card.matched) { btn.classList.add("matched"); btn.disabled = true; }
+        btn.addEventListener("click", () => onClick(idx));
+        board.appendChild(btn);
+      });
+      for (let i = 0; i < STAGES[stageIndex].emptySlots; i++) {
+        const slot = document.createElement("div");
+        slot.className = "empty-slot";
+        board.appendChild(slot);
+      }
+      updateStats();
+    }
+
+    function onClick(idx) {
+      if (lockBoard || cards[idx].matched) return;
+      if (selectedCards.some(s => s.idx === idx)) {
+        selectedCards = selectedCards.filter(s => s.idx !== idx);
+        board.children[idx].classList.remove("selected");
+        return;
+      }
+      if (selectedCards.length === 3) return;
+      board.children[idx].classList.add("selected");
+      selectedCards.push({ idx, group: cards[idx].group, form: cards[idx].form });
+      if (selectedCards.length === 3) { moves++; updateStats(); checkTrio(); }
+    }
+
+    function checkTrio() {
+      lockBoard = true;
+      const [a, b, c] = selectedCards;
+      const sameGroup = a.group === b.group && b.group === c.group;
+      const forms = new Set([a.form, b.form, c.form]);
+      const allForms = forms.has("inf") && forms.has("prae") && forms.has("perf");
+      if (sameGroup && allForms) {
+        [a, b, c].forEach(s => {
+          cards[s.idx].matched = true;
+          const el = board.children[s.idx];
+          el.classList.remove("selected");
+          el.classList.add("matched");
+          el.disabled = true;
+        });
+        matchedTrios++;
+        selectedCards = [];
+        lockBoard = false;
+        infoLine.textContent = `✓ Richtig! ${matchedTrios} / ${STAGES[stageIndex].trios}`;
+        infoLine.className = "info-line success";
+        updateStats();
+        if (matchedTrios === STAGES[stageIndex].trios) { lockBoard = true; setTimeout(showStageComplete, 700); }
+      } else {
+        [a, b, c].forEach(s => { const el = board.children[s.idx]; el.classList.remove("selected"); el.classList.add("wrong"); });
+        infoLine.textContent = "✗ Nicht richtig. Versuche es nochmal!";
+        infoLine.className = "info-line";
+        setTimeout(() => {
+          [a, b, c].forEach(s => board.children[s.idx].classList.remove("wrong"));
+          selectedCards = []; lockBoard = false;
+        }, 800);
+      }
+    }
+
+    function showStageComplete() {
+      completedStages.push(stageIndex);
+      buildStagesRow();
+      const isLast = stageIndex === STAGES.length - 1;
+      if (isLast) {
+        modalIcon.textContent = "🏆";
+        modalTitle.textContent = "Ausgezeichnet!";
+        modalText.textContent = `Du hast alle 6 Stufen gemeistert! ${moves} Züge insgesamt. Du bist ein Verbprofi!`;
+        modalBtn.textContent = "Nochmal spielen";
+        modalBtn.onclick = () => { hideModal(); startGame(0); };
+      } else {
+        const next = STAGES[stageIndex + 1];
+        modalIcon.textContent = "⭐";
+        modalTitle.textContent = `Stufe ${stageIndex + 1} geschafft!`;
+        modalText.textContent = `Weiter zur Stufe ${stageIndex + 2} — Feld ${next.cols}×${next.rows} mit ${next.trios} Verbgruppen.`;
+        modalBtn.textContent = "Nächste Stufe →";
+        modalBtn.onclick = () => { hideModal(); startGame(stageIndex + 1); };
+      }
+      setTimeout(() => modalOverlay.classList.add("visible"), 200);
+    }
+
+    function hideModal() { modalOverlay.classList.remove("visible"); }
+
+    newGameBtn.addEventListener("click", () => startGame(0));
+    reshuffleBtn.addEventListener("click", () => startGame(stageIndex));
+
+    initGruppeUI();
     startGame(0);
-  });
-}
-
-function buildStagesRow() {
-  stagesRow.innerHTML = "";
-  STAGES.forEach((_, i) => {
-    const d = document.createElement("div");
-    d.className = "stage-dot" + (completedStages.includes(i) ? " done" : "") + (i === stageIndex ? " active" : "");
-    stagesRow.appendChild(d);
-  });
-}
-
-function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function getPool() {
-  return activeGruppe === "Alle" ? verben : verben.filter(v => v.gruppe === activeGruppe);
-}
-
-function updateStats() {
-  statMoves.textContent = moves;
-  statMatches.textContent = matchedTrios;
-  progressFill.style.width = STAGES[stageIndex].trios > 0 ? `${(matchedTrios / STAGES[stageIndex].trios) * 100}%` : "0%";
-}
-
-function startGame(sIdx = 0) {
-  stageIndex = sIdx;
-  if (sIdx === 0) completedStages = [];
-  selectedCards = []; moves = 0; matchedTrios = 0; lockBoard = false;
-  const stage = STAGES[stageIndex];
-  const pool = getPool();
-  statTotal.textContent = pool.length;
-  if (pool.length < stage.trios) {
-    infoLine.textContent = `Zu wenige Verben (${pool.length}). Wähle eine größere Gruppe.`;
-    board.innerHTML = ""; updateStats(); buildStagesRow(); return;
-  }
-  const chosen = shuffle(pool).slice(0, stage.trios);
-  cards = [];
-  chosen.forEach((v, i) => {
-    cards.push({ id: `${i}-inf`,  group: i, form: "inf",  text: v.infinitiv,   matched: false });
-    cards.push({ id: `${i}-prae`, group: i, form: "prae", text: v.praeteritum, matched: false });
-    cards.push({ id: `${i}-perf`, group: i, form: "perf", text: v.perfekt,     matched: false });
-  });
-  cards = shuffle(cards);
-  stageNum.textContent    = stageIndex + 1;
-  gridSize.textContent    = `${stage.cols}×${stage.rows}`;
-  pairsNeeded.textContent = stage.trios;
-  statTarget.textContent  = stage.trios;
-  infoLine.textContent = `Stufe ${stageIndex + 1} — Finde ${stage.trios} Verbgruppen`;
-  infoLine.className = "info-line";
-  updateStats(); buildStagesRow(); renderBoard();
-}
-
-function renderBoard() {
-  board.innerHTML = "";
-  const stage = STAGES[stageIndex];
-  board.style.gridTemplateColumns = `repeat(${stage.cols}, minmax(100px, 160px))`;
-  board.style.maxWidth = `${stage.cols * 174}px`;
-  cards.forEach((card, idx) => {
-    const btn = document.createElement("button");
-    btn.className = "card card-" + card.form;
-    btn.textContent = card.text;
-    btn.dataset.idx = idx;
-    if (card.matched) { btn.classList.add("matched"); btn.disabled = true; }
-    btn.addEventListener("click", () => onClick(idx));
-    board.appendChild(btn);
-  });
-  for (let i = 0; i < STAGES[stageIndex].emptySlots; i++) {
-    const slot = document.createElement("div");
-    slot.className = "empty-slot";
-    board.appendChild(slot);
-  }
-  updateStats();
-}
-
-function onClick(idx) {
-  if (lockBoard || cards[idx].matched) return;
-  if (selectedCards.some(s => s.idx === idx)) {
-    selectedCards = selectedCards.filter(s => s.idx !== idx);
-    board.children[idx].classList.remove("selected");
-    return;
-  }
-  if (selectedCards.length === 3) return;
-  board.children[idx].classList.add("selected");
-  selectedCards.push({ idx, group: cards[idx].group, form: cards[idx].form });
-  if (selectedCards.length === 3) { moves++; updateStats(); checkTrio(); }
-}
-
-function checkTrio() {
-  lockBoard = true;
-  const [a, b, c] = selectedCards;
-  const sameGroup = a.group === b.group && b.group === c.group;
-  const forms = new Set([a.form, b.form, c.form]);
-  const allForms = forms.has("inf") && forms.has("prae") && forms.has("perf");
-  if (sameGroup && allForms) {
-    [a, b, c].forEach(s => {
-      cards[s.idx].matched = true;
-      const el = board.children[s.idx];
-      el.classList.remove("selected");
-      el.classList.add("matched");
-      el.disabled = true;
-    });
-    matchedTrios++;
-    selectedCards = [];
-    lockBoard = false;
-    infoLine.textContent = `✓ Richtig! ${matchedTrios} / ${STAGES[stageIndex].trios}`;
-    infoLine.className = "info-line success";
-    updateStats();
-    if (matchedTrios === STAGES[stageIndex].trios) { lockBoard = true; setTimeout(showStageComplete, 700); }
-  } else {
-    [a, b, c].forEach(s => { const el = board.children[s.idx]; el.classList.remove("selected"); el.classList.add("wrong"); });
-    infoLine.textContent = "✗ Nicht richtig. Versuche es nochmal!";
-    infoLine.className = "info-line";
-    setTimeout(() => {
-      [a, b, c].forEach(s => board.children[s.idx].classList.remove("wrong"));
-      selectedCards = []; lockBoard = false;
-    }, 800);
-  }
-}
-
-function showStageComplete() {
-  completedStages.push(stageIndex);
-  buildStagesRow();
-  const isLast = stageIndex === STAGES.length - 1;
-  if (isLast) {
-    modalIcon.textContent = "🏆";
-    modalTitle.textContent = "Ausgezeichnet!";
-    modalText.textContent = `Du hast alle 6 Stufen gemeistert! ${moves} Züge insgesamt. Du bist ein Verbprofi!`;
-    modalBtn.textContent = "Nochmal spielen";
-    modalBtn.onclick = () => { hideModal(); startGame(0); };
-  } else {
-    const next = STAGES[stageIndex + 1];
-    modalIcon.textContent = "⭐";
-    modalTitle.textContent = `Stufe ${stageIndex + 1} geschafft!`;
-    modalText.textContent = `Weiter zur Stufe ${stageIndex + 2} — Feld ${next.cols}×${next.rows} mit ${next.trios} Verbgruppen.`;
-    modalBtn.textContent = "Nächste Stufe →";
-    modalBtn.onclick = () => { hideModal(); startGame(stageIndex + 1); };
-  }
-  setTimeout(() => modalOverlay.classList.add("visible"), 200);
-}
-
-function hideModal() { modalOverlay.classList.remove("visible"); }
-
-newGameBtn.addEventListener("click", () => startGame(0));
-reshuffleBtn.addEventListener("click", () => startGame(stageIndex));
-
-initGruppeUI();
-startGame(0);
-</script>
+  </script>
 </body>
+
 </html>
