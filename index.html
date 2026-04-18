@@ -13,7 +13,6 @@
     [data-theme="light"] {
       --bg: #EFF2F9;
       --surface: #E4EBF1;
-      --surface2: #F7F9FC;
       --dark: #6E7F8D;
       --text: #3a4a55;
       --muted: #8a9baa;
@@ -30,7 +29,6 @@
     [data-theme="dark"] {
       --bg: #1e2025;
       --surface: #1a1d22;
-      --surface2: #22262d;
       --dark: #c8d6e5;
       --text: #b0bec8;
       --muted: #6a7f8d;
@@ -65,46 +63,37 @@
       padding: 40px 24px 80px;
     }
 
+    /* HEADER */
     header {
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 40px;
-      position: relative;
+      gap: 16px;
     }
 
-    .logo-tag {
-      display: inline-block;
-      background: var(--surface);
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-      box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+    .header-center {
+      flex: 1;
+      text-align: center;
     }
 
     h1 {
       font-family: "Cabinet Grotesk", sans-serif;
-      font-size: clamp(28px, 5vw, 48px);
+      font-size: clamp(22px, 4vw, 42px);
       font-weight: 800;
       color: var(--dark);
       line-height: 1.1;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       letter-spacing: -1px;
     }
 
     .subtitle {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 500;
     }
 
     .theme-toggle {
-      position: absolute;
-      top: 0;
-      right: 0;
       background: var(--bg);
       border: none;
       border-radius: 50%;
@@ -118,6 +107,7 @@
       box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
       transition: all 0.2s;
       color: var(--dark);
+      flex-shrink: 0;
     }
 
     .theme-toggle:hover {
@@ -128,10 +118,9 @@
       box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -3px -3px 7px var(--shadow-light);
     }
 
+    /* LANG SWITCH */
     .lang-switch-wrap {
-      position: absolute;
-      top: 0;
-      left: 0;
+      flex-shrink: 0;
     }
 
     .lang-switch {
@@ -168,6 +157,7 @@
       color: var(--text);
     }
 
+    /* CONTROLS */
     .controls {
       display: flex;
       flex-wrap: wrap;
@@ -299,6 +289,7 @@
       font-family: "Cabinet Grotesk", sans-serif;
     }
 
+    /* GRUPPE */
     .gruppe-bar {
       display: flex;
       flex-direction: row;
@@ -365,6 +356,7 @@
       max-width: 200px;
     }
 
+    /* INFO */
     .info-line {
       text-align: center;
       font-size: 14px;
@@ -380,6 +372,7 @@
       font-weight: 600;
     }
 
+    /* GAME GRID */
     .game-area {
       display: grid;
       gap: 12px;
@@ -433,7 +426,6 @@
 
     .card-inf {
       color: var(--accent-inf);
-      
     }
 
     .card-inf::after {
@@ -509,7 +501,7 @@
       box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light);
     }
 
-    /* STAGES & LEGEND — внизу */
+    /* STAGES & LEGEND */
     .stages-label {
       font-size: 11px;
       color: var(--muted);
@@ -647,6 +639,18 @@
     }
 
     @media (max-width: 600px) {
+      header {
+        gap: 10px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .subtitle {
+        font-size: 12px;
+      }
+
       .controls {
         flex-direction: column;
         align-items: flex-start;
@@ -668,14 +672,9 @@
         min-height: 70px;
       }
 
-      .theme-toggle {
-        top: -8px;
-        right: -8px;
-      }
-
-      .lang-switch-wrap {
-        top: -8px;
-        left: -8px;
+      .lang-btn {
+        padding: 6px 12px;
+        font-size: 11px;
       }
     }
   </style>
@@ -684,17 +683,17 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="logo-tag">Deutsch lernen</div>
-      <h1>Unregelmäßige Verben</h1>
-      <p class="subtitle">Verbinde Infinitiv · Präteritum · Perfekt</p>
-      <button class="theme-toggle" id="themeToggle" aria-label="Dark/Light Mode umschalten"
-        title="Dark/Light Mode">🌙</button>
       <div class="lang-switch-wrap">
         <div class="lang-switch">
           <button class="lang-btn active" data-lang="uk">УКР</button>
           <button class="lang-btn" data-lang="en">ENG</button>
         </div>
       </div>
+      <div class="header-center">
+        <h1>Unregelmäßige Verben</h1>
+        <p class="subtitle">Verbinde Infinitiv · Präteritum · Perfekt</p>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Dark/Light Mode" title="Dark/Light Mode">🌙</button>
     </header>
 
     <div class="controls">
@@ -760,7 +759,6 @@
       darkMode = !darkMode;
       html.setAttribute("data-theme", darkMode ? "dark" : "light");
       toggleBtn.textContent = darkMode ? "☀️" : "🌙";
-      toggleBtn.setAttribute("aria-label", darkMode ? "Light Mode" : "Dark Mode");
     });
 
     let activeLang = "uk";
@@ -778,10 +776,8 @@
         const idx = parseInt(el.dataset.idx);
         const card = cards[idx];
         if (!card) return;
-        const verb = card.verbRef;
-        if (!verb) return;
         const tr = el.querySelector(".card-translation");
-        if (tr) tr.textContent = activeLang === "uk" ? (verb.uk || "") : (verb.en || "");
+        if (tr) tr.textContent = activeLang === "uk" ? (card.verbRef.uk || "") : (card.verbRef.en || "");
       });
     }
 
@@ -826,8 +822,7 @@
         const pill = document.createElement("button");
         pill.className = "pill" + (g === "Alle" ? " active" : "");
         pill.dataset.gruppe = g;
-        const num = String(i + 1).padStart(2, "0");
-        pill.innerHTML = `<span class="pill-num">${num}</span><span class="pill-name">${g}</span>`;
+        pill.innerHTML = `<span class="pill-num">${String(i + 1).padStart(2, "0")}</span><span class="pill-name">${g}</span>`;
         pill.addEventListener("click", () => {
           activeGruppe = g;
           document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
@@ -917,8 +912,7 @@
         if (card.form === "inf") {
           const tr = document.createElement("span");
           tr.className = "card-translation";
-          const verb = card.verbRef;
-          tr.textContent = activeLang === "uk" ? (verb.uk || "") : (verb.en || "");
+          tr.textContent = activeLang === "uk" ? (card.verbRef.uk || "") : (card.verbRef.en || "");
           btn.appendChild(tr);
         }
 
@@ -969,7 +963,7 @@
         updateStats();
         if (matchedTrios === STAGES[stageIndex].trios) { lockBoard = true; setTimeout(showStageComplete, 700); }
       } else {
-        [a, b, c].forEach(s => { const el = board.children[s.idx]; el.classList.remove("selected"); el.classList.add("wrong"); });
+        [a, b, c].forEach(s => { board.children[s.idx].classList.remove("selected"); board.children[s.idx].classList.add("wrong"); });
         infoLine.textContent = "✗ Nicht richtig. Versuche es nochmal!";
         infoLine.className = "info-line";
         setTimeout(() => {
