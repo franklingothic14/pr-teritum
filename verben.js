@@ -17,6 +17,7 @@ const verben = [
   { infinitiv: "gleichen", praeteritum: "glich", perfekt: "hat geglichen", gruppe: "ei → ie", uk: "бути схожим", en: "to resemble" },
   { infinitiv: "greifen", praeteritum: "griff", perfekt: "hat gegriffen", gruppe: "ei → ie", uk: "хапати", en: "to grab" },
   { infinitiv: "leihen", praeteritum: "lieh", perfekt: "hat geliehen", gruppe: "ei → ie", uk: "позичати", en: "to lend" },
+  { infinitiv: "verleihen", praeteritum: "verlieh", perfekt: "hat verliehen", gruppe: "ei → ie", uk: "позичати/видавати", en: "to lend/award" },
 
   // i → a
   { infinitiv: "beginnen", praeteritum: "begann", perfekt: "hat begonnen", gruppe: "i → a", uk: "починати", en: "to begin" },
@@ -44,11 +45,9 @@ const verben = [
   { infinitiv: "schließen", praeteritum: "schloss", perfekt: "hat geschlossen", gruppe: "ie → o", uk: "зачиняти", en: "to close" },
   { infinitiv: "verlieren", praeteritum: "verlor", perfekt: "hat verloren", gruppe: "ie → o", uk: "втрачати", en: "to lose" },
   { infinitiv: "ziehen", praeteritum: "zog", perfekt: "hat/ist gezogen", gruppe: "ie → o", uk: "тягнути/переїжджати", en: "to pull/move" },
-  { infinitiv: "lügen", praeteritum: "log", perfekt: "hat gelogen", gruppe: "ie → o", uk: "брехати", en: "to lie" },
   { infinitiv: "wiegen", praeteritum: "wog", perfekt: "hat gewogen", gruppe: "ie → o", uk: "важити", en: "to weigh" },
   { infinitiv: "biegen", praeteritum: "bog", perfekt: "hat/ist gebogen", gruppe: "ie → o", uk: "згинати", en: "to bend" },
   { infinitiv: "bieten", praeteritum: "bot", perfekt: "hat geboten", gruppe: "ie → o", uk: "пропонувати", en: "to offer" },
-  { infinitiv: "verleihen", praeteritum: "verlieh", perfekt: "hat verliehen", gruppe: "ie → o", uk: "позичати/видавати", en: "to lend/award" },
 
   // e → a
   { infinitiv: "brechen", praeteritum: "brach", perfekt: "hat/ist gebrochen", gruppe: "e → a", uk: "ламати", en: "to break" },
@@ -80,6 +79,7 @@ const verben = [
   { infinitiv: "wachsen", praeteritum: "wuchs", perfekt: "ist gewachsen", gruppe: "a → u", uk: "рости", en: "to grow" },
   { infinitiv: "waschen", praeteritum: "wusch", perfekt: "hat gewaschen", gruppe: "a → u", uk: "мити", en: "to wash" },
   { infinitiv: "graben", praeteritum: "grub", perfekt: "hat gegraben", gruppe: "a → u", uk: "копати", en: "to dig" },
+  { infinitiv: "erschaffen", praeteritum: "erschuf", perfekt: "hat erschaffen", gruppe: "a → u", uk: "творити", en: "to create" },
 
   // a → ie
   { infinitiv: "fallen", praeteritum: "fiel", perfekt: "ist gefallen", gruppe: "a → ie", uk: "падати", en: "to fall" },
@@ -94,8 +94,6 @@ const verben = [
   { infinitiv: "stoßen", praeteritum: "stieß", perfekt: "hat/ist gestoßen", gruppe: "a → ie", uk: "штовхати", en: "to push" },
 
   // e → o
-  { infinitiv: "erschaffen", praeteritum: "erschuf", perfekt: "hat erschaffen", gruppe: "e → o", uk: "творити", en: "to create" },
-  { infinitiv: "gebären", praeteritum: "gebar", perfekt: "hat geboren", gruppe: "e → o", uk: "народжувати", en: "to give birth" },
   { infinitiv: "helfen", praeteritum: "half", perfekt: "hat geholfen", gruppe: "e → o", uk: "допомагати", en: "to help" },
   { infinitiv: "sterben", praeteritum: "starb", perfekt: "ist gestorben", gruppe: "e → o", uk: "вмирати", en: "to die" },
   { infinitiv: "verderben", praeteritum: "verdarb", perfekt: "hat/ist verdorben", gruppe: "e → o", uk: "псувати", en: "to spoil" },
@@ -123,6 +121,8 @@ const verben = [
   { infinitiv: "stehen", praeteritum: "stand", perfekt: "hat/ist gestanden", gruppe: "Besondere", uk: "стояти", en: "to stand" },
   { infinitiv: "tun", praeteritum: "tat", perfekt: "hat getan", gruppe: "Besondere", uk: "робити", en: "to do" },
   { infinitiv: "werden", praeteritum: "wurde", perfekt: "ist geworden", gruppe: "Besondere", uk: "ставати", en: "to become" },
+  { infinitiv: "lügen", praeteritum: "log", perfekt: "hat gelogen", gruppe: "Besondere", uk: "брехати", en: "to lie" },
+  { infinitiv: "gebären", praeteritum: "gebar", perfekt: "hat geboren", gruppe: "Besondere", uk: "народжувати", en: "to give birth" },
 
   // Modalverben
   { infinitiv: "dürfen", praeteritum: "durfte", perfekt: "hat gedurft", gruppe: "Modalverben", uk: "мати дозвіл", en: "may/to be allowed" },
