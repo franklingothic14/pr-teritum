@@ -178,10 +178,7 @@
       transition: width 0.4s ease;
     }
 
-    label {
-      display: none;
-    }
-
+    label,
     select {
       display: none;
     }
@@ -232,7 +229,6 @@
       text-align: center;
       min-width: 80px;
       box-shadow: inset 3px 3px 7px var(--shadow-dark), inset -3px -3px 7px var(--shadow-light);
-      transition: background 0.3s;
     }
 
     .stat-label {
@@ -459,6 +455,7 @@
       border-radius: 18px;
       background: var(--bg);
       box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light);
+      width: 100%;
     }
 
     .stages-label {
@@ -533,7 +530,6 @@
       background: var(--accent-perf);
     }
 
-    /* LANG DROPDOWN */
     .lang-picker-wrap {
       display: flex;
       justify-content: center;
@@ -549,7 +545,7 @@
 
     .lang-dropdown {
       position: relative;
-      width: 200px;
+      width: 220px;
     }
 
     .lang-trigger {
@@ -677,7 +673,6 @@
       text-align: center;
     }
 
-    /* MODAL */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -774,6 +769,10 @@
         max-width: 130px;
         min-height: 70px;
       }
+
+      .lang-dropdown {
+        width: 200px;
+      }
     }
   </style>
 </head>
@@ -791,8 +790,8 @@
 
     <div class="controls">
       <div class="controls-left">
-        <label for="gruppeSelect" style="display:none">Gruppe:</label>
-        <select id="gruppeSelect" style="display:none"></select>
+        <label for="gruppeSelect">Gruppe:</label>
+        <select id="gruppeSelect"></select>
         <button class="btn btn-primary" id="newGameBtn">Neues Spiel</button>
         <button class="btn" id="reshuffleBtn">Mischen</button>
       </div>
@@ -814,7 +813,6 @@
     </div>
 
     <div class="gruppe-bar" id="gruppeBar"></div>
-
     <div class="info-line" id="infoLine">Wähle eine Karte…</div>
     <div class="game-area" id="gameBoard"></div>
 
@@ -859,9 +857,8 @@
     </div>
   </div>
 
-  <script src="verben.js"></script>
+  <script src="./verben.js"></script>
   <script>
-    // THEME
     const html = document.documentElement;
     const toggleBtn = document.getElementById("themeToggle");
     let darkMode = false;
@@ -871,10 +868,9 @@
       toggleBtn.textContent = darkMode ? "☀️" : "🌙";
     });
 
-    // LANG DROPDOWN
-    const LANGS = ["Українська", "English"];
-    const LANG_KEYS = ["uk", "en"];
-    let activeLangIndex = 1; // English за замовчуванням
+    const LANGS = ["Українська", "English", "Magyar"];
+    const LANG_KEYS = ["uk", "en", "hu"];
+    let activeLangIndex = 1;
     let activeLang = "en";
 
     const langTrigger = document.getElementById("langTrigger");
@@ -909,7 +905,7 @@
     langTrigger.addEventListener("click", (e) => {
       e.stopPropagation();
       const isOpen = langMenu.classList.contains("open");
-      if (isOpen) { closeLangMenu(); }
+      if (isOpen) closeLangMenu();
       else {
         langMenu.classList.add("open");
         langTrigger.classList.add("open");
@@ -920,34 +916,23 @@
     document.addEventListener("click", () => closeLangMenu());
     langMenu.addEventListener("click", (e) => e.stopPropagation());
 
-    buildLangMenu();
+    let cards = [];
+    let selectedCards = [];
+    let moves = 0;
+    let matchedTrios = 0;
+    let lockBoard = false;
+    let stageIndex = 0;
+    let activeGruppe = "Alle";
+    let completedStages = [];
 
-    // оновлює переклад на вже matched картках при зміні мови
-    function updateTranslations() {
-      document.querySelectorAll(".card-inf.matched").forEach(el => {
-        const idx = parseInt(el.dataset.idx);
-        const card = cards[idx];
-        if (!card) return;
-        const tr = el.querySelector(".card-translation");
-        if (!tr) return;
-        tr.textContent = activeLang === "uk"
-          ? (card.verbRef.uk || "")
-          : (card.verbRef.en || "");
-      });
-    }
-
-    // GAME
     const STAGES = [
       { cols: 3, rows: 3, trios: 3, emptySlots: 0 },
       { cols: 3, rows: 4, trios: 4, emptySlots: 0 },
       { cols: 3, rows: 5, trios: 5, emptySlots: 0 },
       { cols: 4, rows: 5, trios: 6, emptySlots: 2 },
       { cols: 4, rows: 6, trios: 8, emptySlots: 0 },
-      { cols: 5, rows: 6, trios: 10, emptySlots: 0 },
+      { cols: 5, rows: 6, trios: 10, emptySlots: 0 }
     ];
-
-    let cards = [], selectedCards = [], moves = 0, matchedTrios = 0;
-    let lockBoard = false, stageIndex = 0, activeGruppe = "Alle", completedStages = [];
 
     const board = document.getElementById("gameBoard");
     const infoLine = document.getElementById("infoLine");
@@ -970,10 +955,26 @@
     const modalText = document.getElementById("modalText");
     const modalBtn = document.getElementById("modalBtn");
 
+    function getTranslation(verbRef) {
+      return verbRef?.[activeLang] || "";
+    }
+
+    function updateTranslations() {
+      document.querySelectorAll(".card-inf.matched").forEach(el => {
+        const idx = parseInt(el.dataset.idx, 10);
+        const card = cards[idx];
+        if (!card) return;
+        const tr = el.querySelector(".card-translation");
+        if (!tr) return;
+        tr.textContent = getTranslation(card.verbRef);
+      });
+    }
+
     function initGruppeUI() {
       const gruppen = ["Alle", ...new Set(verben.map(v => v.gruppe))];
       gruppeSelect.innerHTML = gruppen.map(g => `<option value="${g}">${g}</option>`).join("");
       gruppeBar.innerHTML = "";
+
       gruppen.forEach((g, i) => {
         const pill = document.createElement("button");
         pill.className = "pill" + (g === "Alle" ? " active" : "");
@@ -988,6 +989,7 @@
         });
         gruppeBar.appendChild(pill);
       });
+
       gruppeSelect.addEventListener("change", () => {
         activeGruppe = gruppeSelect.value;
         document.querySelectorAll(".pill").forEach(p => p.classList.toggle("active", p.dataset.gruppe === activeGruppe));
@@ -1020,28 +1022,38 @@
     function updateStats() {
       statMoves.textContent = moves;
       statMatches.textContent = matchedTrios;
-      progressFill.style.width = STAGES[stageIndex].trios > 0
-        ? `${(matchedTrios / STAGES[stageIndex].trios) * 100}%` : "0%";
+      progressFill.style.width = STAGES[stageIndex].trios > 0 ? `${(matchedTrios / STAGES[stageIndex].trios) * 100}%` : "0%";
     }
 
     function startGame(sIdx = 0) {
       stageIndex = sIdx;
       if (sIdx === 0) completedStages = [];
-      selectedCards = []; moves = 0; matchedTrios = 0; lockBoard = false;
+      selectedCards = [];
+      moves = 0;
+      matchedTrios = 0;
+      lockBoard = false;
+
       const stage = STAGES[stageIndex];
       const pool = getPool();
       statTotal.textContent = pool.length;
+
       if (pool.length < stage.trios) {
         infoLine.textContent = `Zu wenige Verben (${pool.length}). Wähle eine größere Gruppe.`;
-        board.innerHTML = ""; updateStats(); buildStagesRow(); return;
+        board.innerHTML = "";
+        updateStats();
+        buildStagesRow();
+        return;
       }
+
       const chosen = shuffle(pool).slice(0, stage.trios);
       cards = [];
+
       chosen.forEach((v, i) => {
         cards.push({ id: `${i}-inf`, group: i, form: "inf", text: v.infinitiv, matched: false, verbRef: v });
         cards.push({ id: `${i}-prae`, group: i, form: "prae", text: v.praeteritum, matched: false, verbRef: v });
         cards.push({ id: `${i}-perf`, group: i, form: "perf", text: v.perfekt, matched: false, verbRef: v });
       });
+
       cards = shuffle(cards);
       stageNum.textContent = stageIndex + 1;
       gridSize.textContent = `${stage.cols}×${stage.rows}`;
@@ -1049,7 +1061,9 @@
       statTarget.textContent = stage.trios;
       infoLine.textContent = "Wähle eine Karte…";
       infoLine.className = "info-line";
-      updateStats(); buildStagesRow(); renderBoard();
+      updateStats();
+      buildStagesRow();
+      renderBoard();
     }
 
     function renderBoard() {
@@ -1067,27 +1081,28 @@
         textSpan.textContent = card.text;
         btn.appendChild(textSpan);
 
-        // переклад лише для інфінітивних карток
         if (card.form === "inf") {
           const tr = document.createElement("span");
           tr.className = "card-translation";
-          // використовуємо поточну activeLang
-          tr.textContent = activeLang === "uk"
-            ? (card.verbRef.uk || "")
-            : (card.verbRef.en || "");
+          tr.textContent = getTranslation(card.verbRef);
           btn.appendChild(tr);
         }
 
-        if (card.matched) { btn.classList.add("matched"); btn.disabled = true; }
+        if (card.matched) {
+          btn.classList.add("matched");
+          btn.disabled = true;
+        }
+
         btn.addEventListener("click", () => onClick(idx));
         board.appendChild(btn);
       });
 
-      for (let i = 0; i < STAGES[stageIndex].emptySlots; i++) {
+      for (let i = 0; i < stage.emptySlots; i++) {
         const slot = document.createElement("div");
         slot.className = "empty-slot";
         board.appendChild(slot);
       }
+
       updateStats();
     }
 
@@ -1099,9 +1114,15 @@
         return;
       }
       if (selectedCards.length === 3) return;
+
       board.children[idx].classList.add("selected");
       selectedCards.push({ idx, group: cards[idx].group, form: cards[idx].form });
-      if (selectedCards.length === 3) { moves++; updateStats(); checkTrio(); }
+
+      if (selectedCards.length === 3) {
+        moves++;
+        updateStats();
+        checkTrio();
+      }
     }
 
     function checkTrio() {
@@ -1118,39 +1139,46 @@
           el.classList.remove("selected");
           el.classList.add("matched");
           el.disabled = true;
-          // оновити переклад одразу після match з поточною мовою
+
           if (cards[s.idx].form === "inf") {
             const tr = el.querySelector(".card-translation");
-            if (tr) tr.textContent = activeLang === "uk"
-              ? (cards[s.idx].verbRef.uk || "")
-              : (cards[s.idx].verbRef.en || "");
+            if (tr) tr.textContent = getTranslation(cards[s.idx].verbRef);
           }
         });
+
         matchedTrios++;
         selectedCards = [];
         lockBoard = false;
         infoLine.textContent = `✓ Richtig! ${matchedTrios} / ${STAGES[stageIndex].trios}`;
         infoLine.className = "info-line success";
         updateStats();
-        if (matchedTrios === STAGES[stageIndex].trios) { lockBoard = true; setTimeout(showStageComplete, 700); }
+
+        if (matchedTrios === STAGES[stageIndex].trios) {
+          lockBoard = true;
+          setTimeout(showStageComplete, 700);
+        }
       } else {
         [a, b, c].forEach(s => {
           board.children[s.idx].classList.remove("selected");
           board.children[s.idx].classList.add("wrong");
         });
+
         infoLine.textContent = "✗ Nicht richtig. Versuche es nochmal!";
         infoLine.className = "info-line";
+
         setTimeout(() => {
           [a, b, c].forEach(s => board.children[s.idx].classList.remove("wrong"));
-          selectedCards = []; lockBoard = false;
+          selectedCards = [];
+          lockBoard = false;
         }, 800);
       }
     }
 
     function showStageComplete() {
-      completedStages.push(stageIndex);
+      if (!completedStages.includes(stageIndex)) completedStages.push(stageIndex);
       buildStagesRow();
       const isLast = stageIndex === STAGES.length - 1;
+
       if (isLast) {
         modalIcon.textContent = "🏆";
         modalTitle.textContent = "Ausgezeichnet!";
@@ -1165,14 +1193,18 @@
         modalBtn.textContent = "Nächste Stufe →";
         modalBtn.onclick = () => { hideModal(); startGame(stageIndex + 1); };
       }
+
       setTimeout(() => modalOverlay.classList.add("visible"), 200);
     }
 
-    function hideModal() { modalOverlay.classList.remove("visible"); }
+    function hideModal() {
+      modalOverlay.classList.remove("visible");
+    }
 
     newGameBtn.addEventListener("click", () => startGame(0));
     reshuffleBtn.addEventListener("click", () => startGame(stageIndex));
 
+    buildLangMenu();
     initGruppeUI();
     startGame(0);
   </script>
