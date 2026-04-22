@@ -1,3 +1,4 @@
+// -*- coding: utf-8 -*-
 const verben = [
   // ei → ie
   { infinitiv: "bleiben", praeteritum: "blieb", perfekt: "ist geblieben", gruppe: "ei → ie", uk: "залишатися", en: "to stay", hu: "maradni" },
